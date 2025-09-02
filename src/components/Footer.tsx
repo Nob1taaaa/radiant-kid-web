@@ -93,10 +93,12 @@ const Footer = () => {
                 <MapPin size={20} className="text-primary flex-shrink-0 mt-1" />
                 <span className="text-white/80">{school.address}</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone size={20} className="text-primary flex-shrink-0" />
-                <span className="text-white/80">{school.contact.phone}</span>
-              </div>
+              {school.contact.phone && (
+                <div className="flex items-center space-x-3">
+                  <Phone size={20} className="text-primary flex-shrink-0" />
+                  <span className="text-white/80">{school.contact.phone}</span>
+                </div>
+              )}
               {school.contact.email && (
                 <div className="flex items-center space-x-3">
                   <Mail size={20} className="text-primary flex-shrink-0" />
