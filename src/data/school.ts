@@ -1,7 +1,7 @@
 export const school = {
-  name: "Devanath Public School",
+  name: "Devnath Public School Lalmankot",
   shortName: "Devanath",
-  location: "Singraur, Varanasi",
+  location: "Cholapur, Varanasi",
   tagline: "A progressive learning space where every child thrives",
   overview:
     "Devanath Public School in Singraur, Varanasi offers a comprehensive approach to education that balances academics, creativity and character-building. Experienced educators, modern classrooms and a child‑first philosophy ensure joyful learning and steady growth.",
@@ -33,7 +33,7 @@ export const school = {
     { day: "Saturday", time: "08:00 AM – 02:00 PM" },
     { day: "Sunday", time: "Closed" },
   ],
-  address: "Near Lalimakot, Singraur, Varanasi, Uttar Pradesh",
+  address: "Lalmankot, Cholapur, Varanasi, Uttar Pradesh",
   contact: {
     phone: "",
     whatsapp: "",
