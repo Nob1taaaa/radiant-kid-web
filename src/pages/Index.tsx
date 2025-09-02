@@ -12,6 +12,7 @@ import TeachersSection from "@/components/TeachersSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import SchoolInfoSection from "@/components/SchoolInfoSection";
+import SchoolStatsSection from "@/components/SchoolStatsSection";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
         <StatsSection />
         <AgeProgramsSection />
         <SchoolInfoSection />
+        <SchoolStatsSection />
         <TeachersSection />
         <TestimonialsSection />
       </main>
