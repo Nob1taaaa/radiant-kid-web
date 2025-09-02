@@ -10,6 +10,12 @@ const SchoolInfoSection = () => {
     <section id="school-info" className="py-20 bg-gradient-to-br from-orange-light/10 via-white to-teal-light/10 relative overflow-hidden">
       <div className="absolute -top-10 -left-10 w-32 h-32 bg-primary/10 rounded-full animate-bounce-gentle"></div>
       <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full animate-bounce-gentle" style={{ animationDelay: "1s" }}></div>
+      <CuteStickers stickers={[
+        { emoji: "✨", top: "6%", left: "8%" },
+        { emoji: "🎈", top: "18%", right: "10%", delay: "0.3s" },
+        { emoji: "🧸", bottom: "12%", left: "12%", delay: "0.6s" },
+        { emoji: "🦒", bottom: "8%", right: "8%", delay: "0.9s" },
+      ]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
