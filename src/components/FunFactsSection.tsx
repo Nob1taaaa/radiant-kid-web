@@ -1,5 +1,6 @@
 import { Smile, Heart, Trophy, Sparkles } from "lucide-react";
 import giraffeMascot from "@/assets/giraffe-mascot.jpg";
+import { school } from "@/data/school";
 
 const facts = [
   {
@@ -46,12 +47,12 @@ const FunFactsSection = () => {
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Amazing Things Happen{" "}
-              <span className="text-primary">Every Day</span> At Kidsa!
+              <span className="text-primary">Every Day</span> At {school.name}!
             </h2>
             
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-              Our school is filled with joy, laughter, and incredible moments of discovery. 
-              Here are some fun facts that make Kidsa such a special place for children to grow and learn.
+              Our school is filled with joy, laughter, and incredible moments of discovery.
+              Here are some fun facts that make {school.name} such a special place for children to grow and learn.
             </p>
 
             {/* Facts Grid */}
