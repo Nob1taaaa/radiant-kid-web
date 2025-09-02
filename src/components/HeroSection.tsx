@@ -25,7 +25,7 @@ const HeroSection = () => {
               sizes="(max-width: 1024px) 90vw, 40vw"
               alt="Happy children going to school"
               className="w-full h-full object-cover"
-              loading="eager" decoding="async" fetchPriority="high"
+              loading="eager" decoding="async"
             />
           </div>
         </div>
