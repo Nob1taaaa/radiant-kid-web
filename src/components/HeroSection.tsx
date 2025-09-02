@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, ArrowRight, Star } from "lucide-react";
 import heroImage from "@/assets/hero-children.jpg";
+import { school } from "@/data/school";
 
 const HeroSection = () => {
   return (
@@ -20,6 +21,7 @@ const HeroSection = () => {
               ))}
             </div>
             <span className="text-muted-foreground">Trusted by 1000+ families</span>
+            <span className="ml-3 px-3 py-1 rounded-full bg-white/70 text-xs text-foreground shadow-soft">{school.name} • {school.location}</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
