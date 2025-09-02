@@ -46,7 +46,7 @@ const HeroSection = () => {
           <div className="flex items-center space-x-2 mb-4">
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={18} className="text-yellow-400 fill-current" />
+                <Star key={i} size={20} className="text-yellow-400" fill="currentColor" stroke="currentColor" />
               ))}
             </div>
             <span className="text-muted-foreground">{school.stats.totals.students ?? '—'} Students • {school.stats.totals.teachers ?? '—'} Teachers</span>
