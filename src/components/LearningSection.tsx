@@ -35,10 +35,8 @@ const LearningSection = () => {
               <span className="text-primary">With Confidence</span>
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Our innovative approach combines structured learning with creative play, 
-              helping children develop communication skills, critical thinking, 
-              and self-confidence in a supportive environment.
+            <p className="text-base text-muted-foreground mb-6 leading-relaxed max-w-prose">
+              A happy mix of structure and play that builds confidence and communication.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -47,15 +45,15 @@ const LearningSection = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <CheckCircle size={20} className="text-success flex-shrink-0" />
-                    <span className="text-muted-foreground">Interactive Learning</span>
+                    <span className="text-muted-foreground">Interactive</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle size={20} className="text-success flex-shrink-0" />
-                    <span className="text-muted-foreground">Creative Activities</span>
+                    <span className="text-muted-foreground">Creative</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle size={20} className="text-success flex-shrink-0" />
-                    <span className="text-muted-foreground">Personal Growth</span>
+                    <span className="text-muted-foreground">Growth</span>
                   </div>
                 </div>
               </div>
@@ -65,15 +63,15 @@ const LearningSection = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <CheckCircle size={20} className="text-success flex-shrink-0" />
-                    <span className="text-muted-foreground">Morning Circle</span>
+                    <span className="text-muted-foreground">Circle Time</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle size={20} className="text-success flex-shrink-0" />
-                    <span className="text-muted-foreground">Skill Building</span>
+                    <span className="text-muted-foreground">Skills</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle size={20} className="text-success flex-shrink-0" />
-                    <span className="text-muted-foreground">Free Play Time</span>
+                    <span className="text-muted-foreground">Free Play</span>
                   </div>
                 </div>
               </div>
