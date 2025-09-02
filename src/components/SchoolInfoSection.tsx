@@ -1,5 +1,6 @@
 import { School, BookOpen, Building2, Bus, Shield, NotebookPen, Clock, MapPin, Phone, MessageCircle } from "lucide-react";
 import { school } from "@/data/school";
+import CuteStickers from "@/components/CuteStickers";
 
 const badge = (text: string) => (
   <span className="inline-block rounded-full px-3 py-1 text-xs font-semibold bg-white/70 backdrop-blur text-foreground shadow-soft">{text}</span>
