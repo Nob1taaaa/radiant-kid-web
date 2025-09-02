@@ -19,7 +19,14 @@ const HeroSection = () => {
         {/* Left - Image circle */}
         <div className="order-1 lg:order-none animate-fade-in">
           <div className="relative w-full max-w-xl aspect-square rounded-full overflow-hidden shadow-strong mx-auto bg-white">
-            <img src={heroImage} alt="Happy children going to school" className="w-full h-full object-cover" />
+            <img
+              src={`${heroImageBase}&width=1200`}
+              srcSet={`${heroImageBase}&width=800 800w, ${heroImageBase}&width=1200 1200w, ${heroImageBase}&width=1800 1800w, ${heroImageBase}&width=2400 2400w`}
+              sizes="(max-width: 1024px) 90vw, 40vw"
+              alt="Happy children going to school"
+              className="w-full h-full object-cover"
+              loading="eager" decoding="async" fetchPriority="high"
+            />
           </div>
         </div>
 
