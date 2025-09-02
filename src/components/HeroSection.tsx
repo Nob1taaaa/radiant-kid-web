@@ -15,7 +15,7 @@ const HeroSection = () => {
         <Rocket size={40} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
         {/* Left - Image circle */}
         <div className="order-1 lg:order-none animate-fade-in">
           <div className="relative w-full max-w-xl mx-auto">
@@ -42,7 +42,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right - Content */}
-        <div className="animate-slide-in-right">
+        <div className="animate-slide-in-right lg:pl-8">
           <div className="flex items-center space-x-2 mb-4">
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
@@ -52,10 +52,10 @@ const HeroSection = () => {
             <span className="text-muted-foreground">{school.stats.totals.students ?? '—'} Students • {school.stats.totals.teachers ?? '—'} Teachers</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-foreground">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-3 text-foreground">
             Nurturing Bright Minds for a Brighter Tomorrow
           </h1>
-          <p className="text-lg text-muted-foreground mb-8 max-w-xl">
+          <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-xl">
             Early education designed to inspire curiosity, creativity, and confidence.
           </p>
 
