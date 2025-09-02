@@ -13,6 +13,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import SchoolInfoSection from "@/components/SchoolInfoSection";
 import SchoolStatsSection from "@/components/SchoolStatsSection";
+import ZigZagCardsSection from "@/components/ZigZagCardsSection";
 
 const Index = () => {
   return (
