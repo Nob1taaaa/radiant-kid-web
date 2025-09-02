@@ -1,6 +1,7 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, PieChart, Pie, Cell } from 'recharts';
 import { IdCard, GraduationCap, BookOpen, Building2, BadgeInfo, Sparkles } from 'lucide-react';
 import { school } from '@/data/school';
+import CuteStickers from '@/components/CuteStickers';
 
 const colors = [
   'hsl(var(--orange-medium))',
