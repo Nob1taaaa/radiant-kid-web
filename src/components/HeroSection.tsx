@@ -18,15 +18,24 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center w-full">
         {/* Left - Image circle */}
         <div className="order-1 lg:order-none animate-fade-in">
-          <div className="relative w-full max-w-xl aspect-square rounded-full overflow-hidden shadow-strong mx-auto bg-white">
-            <img
-              src={`${heroImageBase}&width=1200`}
-              srcSet={`${heroImageBase}&width=800 800w, ${heroImageBase}&width=1200 1200w, ${heroImageBase}&width=1800 1800w, ${heroImageBase}&width=2400 2400w`}
-              sizes="(max-width: 1024px) 90vw, 40vw"
-              alt="Happy children going to school"
-              className="w-full h-full object-cover"
-              loading="eager" decoding="async"
-            />
+          <div className="relative w-full max-w-xl mx-auto">
+            {/* Main circle image */}
+            <div className="relative aspect-square rounded-full overflow-hidden shadow-strong bg-white">
+              <img
+                src={`${heroImageBase}&width=1200`}
+                srcSet={`${heroImageBase}&width=800 800w, ${heroImageBase}&width=1200 1200w, ${heroImageBase}&width=1800 1800w, ${heroImageBase}&width=2400 2400w`}
+                sizes="(max-width: 1024px) 90vw, 40vw"
+                alt="Happy children going to school"
+                className="w-full h-full object-cover"
+                loading="eager" decoding="async"
+              />
+            </div>
+
+            {/* Outside design curves hugging the circle */}
+            <svg className="pointer-events-none absolute right-[-6%] top-1/2 -translate-y-1/2 w-[42%] h-[66%]" viewBox="0 0 200 300" fill="none" aria-hidden>
+              <path d="M20 20 A 160 160 0 0 1 180 150" stroke="hsl(220 40% 25% / 0.25)" strokeWidth="14" strokeLinecap="round" />
+              <path d="M30 40 A 140 140 0 0 1 170 150" stroke="hsl(220 40% 25% / 0.35)" strokeWidth="8" strokeLinecap="round" />
+            </svg>
           </div>
         </div>
 
