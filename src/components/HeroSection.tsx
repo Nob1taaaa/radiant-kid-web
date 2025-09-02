@@ -5,13 +5,13 @@ import { school } from "@/data/school";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-[80vh] flex items-center relative overflow-hidden bg-gradient-to-b from-white to-[hsl(220_50%_97%)]">
+    <section className="min-h-[80vh] flex items-center relative overflow-hidden bg-gradient-hero">
       {/* Decorative curves and rocket */}
-      <svg className="pointer-events-none absolute -bottom-8 right-0 w-[60%] md:w-[45%]" viewBox="0 0 600 180" fill="none" aria-hidden>
-        <path d="M0 160 C160 120 280 40 600 100" stroke="hsl(220 40% 30% / 0.15)" strokeWidth="12" strokeLinecap="round"/>
-        <path d="M0 180 C200 120 320 60 600 120" stroke="hsl(220 40% 30% / 0.15)" strokeWidth="6" strokeLinecap="round"/>
+      <svg className="pointer-events-none absolute -bottom-8 right-0 w-[60%] md:w-[45%] text-foreground/15" viewBox="0 0 600 180" fill="none" aria-hidden>
+        <path d="M0 160 C160 120 280 40 600 100" stroke="currentColor" strokeWidth="12" strokeLinecap="round"/>
+        <path d="M0 180 C200 120 320 60 600 120" stroke="currentColor" strokeWidth="6" strokeLinecap="round"/>
       </svg>
-      <div className="absolute top-6 right-6 text-[hsl(220_40%_25%)]/70 animate-bounce-gentle hidden md:block">
+      <div className="absolute top-6 right-6 text-secondary/80 animate-bounce-gentle hidden md:block">
         <Rocket size={40} />
       </div>
 
@@ -34,8 +34,8 @@ const HeroSection = () => {
             {/* Outside design curves hugging the circle */}
             <svg className="pointer-events-none absolute inset-0 overflow-visible" viewBox="0 0 100 100" fill="none" aria-hidden>
               <g transform="translate(50,50)">
-                <circle r="52" fill="none" stroke="hsl(220 40% 25% / 0.25)" strokeWidth="4" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
-                <circle r="57" fill="none" stroke="hsl(220 40% 25% / 0.35)" strokeWidth="8" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
+                <circle r="52" fill="none" className="text-foreground/25" stroke="currentColor" strokeWidth="4" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
+                <circle r="57" fill="none" className="text-secondary/60" stroke="currentColor" strokeWidth="8" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
               </g>
             </svg>
           </div>
@@ -52,7 +52,7 @@ const HeroSection = () => {
             <span className="text-muted-foreground">{school.stats.totals.students ?? '—'} Students • {school.stats.totals.teachers ?? '—'} Teachers</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-[hsl(220_40%_20%)]">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-foreground">
             Nurturing Bright Minds for a Brighter Tomorrow
           </h1>
           <p className="text-lg text-muted-foreground mb-8 max-w-xl">
@@ -60,7 +60,7 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
-            <Button className="bg-[hsl(220_70%_35%)] hover:bg-[hsl(220_70%_30%)] text-white px-8 py-4 rounded-full shadow-medium transition-all duration-300">
+            <Button className="bg-gradient-primary hover:opacity-90 text-white px-8 py-4 rounded-full shadow-medium transition-all duration-300">
               Admission Now
             </Button>
             <Button variant="outline" className="border-2 border-foreground/20 hover:bg-foreground/5 px-8 py-4 rounded-full flex items-center gap-2">
