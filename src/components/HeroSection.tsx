@@ -1,93 +1,59 @@
 import { Button } from "@/components/ui/button";
-import { Play, ArrowRight, Star } from "lucide-react";
+import { Play, ArrowRight, Star, Rocket } from "lucide-react";
 import heroImage from "@/assets/hero-children.jpg";
 import { school } from "@/data/school";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-hero min-h-screen flex items-center relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full animate-bounce-gentle"></div>
-      <div className="absolute top-1/3 right-10 w-16 h-16 bg-secondary/10 rounded-full animate-bounce-gentle" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-accent/10 rounded-full animate-bounce-gentle" style={{ animationDelay: '2s' }}></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left content */}
-        <div className="animate-fade-in">
+    <section className="min-h-[80vh] flex items-center relative overflow-hidden bg-gradient-to-b from-white to-[hsl(220_50%_97%)]">
+      {/* Decorative curves and rocket */}
+      <svg className="pointer-events-none absolute -bottom-8 right-0 w-[60%] md:w-[45%]" viewBox="0 0 600 180" fill="none" aria-hidden>
+        <path d="M0 160 C160 120 280 40 600 100" stroke="hsl(220 40% 30% / 0.15)" strokeWidth="12" strokeLinecap="round"/>
+        <path d="M0 180 C200 120 320 60 600 120" stroke="hsl(220 40% 30% / 0.15)" strokeWidth="6" strokeLinecap="round"/>
+      </svg>
+      <div className="absolute top-6 right-6 text-[hsl(220_40%_25%)]/70 animate-bounce-gentle hidden md:block">
+        <Rocket size={40} />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center w-full">
+        {/* Left - Image circle */}
+        <div className="order-1 lg:order-none animate-fade-in">
+          <div className="relative w-full max-w-xl aspect-square rounded-full overflow-hidden shadow-strong mx-auto bg-white">
+            <img src={heroImage} alt="Happy children going to school" className="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        {/* Right - Content */}
+        <div className="animate-slide-in-right">
           <div className="flex items-center space-x-2 mb-4">
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={20} className="text-yellow-400 fill-current" />
+                <Star key={i} size={18} className="text-yellow-400 fill-current" />
               ))}
             </div>
             <span className="text-muted-foreground">{school.stats.totals.students ?? '—'} Students • {school.stats.totals.teachers ?? '—'} Teachers</span>
-            <span className="ml-3 px-3 py-1 rounded-full bg-white/70 text-xs text-foreground shadow-soft">{school.name} • {school.location}</span>
           </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            We Prepare Your{" "}
-            <span className="text-primary">Child</span>{" "}
-            <span className="text-secondary">For Life</span>
+
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-[hsl(220_40%_20%)]">
+            Nurturing Bright Minds for a Brighter Tomorrow
           </h1>
-          
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Our comprehensive early childhood education program nurtures creativity, 
-            builds confidence, and develops essential life skills through play-based learning 
-            and individualized attention.
+          <p className="text-lg text-muted-foreground mb-8 max-w-xl">
+            Early education designed to inspire curiosity, creativity, and confidence.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button className="bg-gradient-primary hover:opacity-90 text-white px-8 py-4 rounded-full shadow-medium transition-all duration-300 flex items-center space-x-2">
-              <span>Start Learning</span>
-              <ArrowRight size={20} />
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <Button className="bg-[hsl(220_70%_35%)] hover:bg-[hsl(220_70%_30%)] text-white px-8 py-4 rounded-full shadow-medium transition-all duration-300">
+              Admission Now
             </Button>
-            <Button variant="outline" className="border-2 border-foreground/20 hover:bg-foreground/5 px-8 py-4 rounded-full flex items-center space-x-2">
-              <Play size={20} />
-              <span>Take A Tour</span>
+            <Button variant="outline" className="border-2 border-foreground/20 hover:bg-foreground/5 px-8 py-4 rounded-full flex items-center gap-2">
+              <Play size={18} /> Watch Tour
             </Button>
           </div>
-          
-          <div className="flex items-center space-x-8 text-sm text-muted-foreground">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-orange-medium rounded-full flex items-center justify-center">
-                <span className="text-white font-semibold text-xs">1</span>
-              </div>
-              <span>Flexible & Learning</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-teal-medium rounded-full flex items-center justify-center">
-                <span className="text-white font-semibold text-xs">2</span>
-              </div>
-              <span>Passionate Teachers</span>
-            </div>
-          </div>
-        </div>
-        
-        {/* Right content - Hero Image */}
-        <div className="relative animate-slide-in-right">
-          <div className="relative">
-            <div className="w-full aspect-square rounded-full overflow-hidden shadow-strong bg-gradient-card">
-              <img 
-                src={heroImage} 
-                alt="Happy children learning together" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-medium animate-bounce-gentle">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">4.9</div>
-                <div className="text-xs text-muted-foreground">Rating</div>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-medium animate-bounce-gentle" style={{ animationDelay: '0.5s' }}>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-secondary">25+</div>
-                <div className="text-xs text-muted-foreground">Teachers</div>
-              </div>
-            </div>
+
+          <div className="inline-flex items-center bg-white/70 backdrop-blur rounded-full px-4 py-2 shadow-soft text-sm">
+            <span className="font-semibold text-foreground">{school.name}</span>
+            <span className="mx-2">•</span>
+            <span className="text-muted-foreground">{school.location}</span>
           </div>
         </div>
       </div>
