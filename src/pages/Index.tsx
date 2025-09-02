@@ -11,6 +11,7 @@ import AgeProgramsSection from "@/components/AgeProgramsSection";
 import TeachersSection from "@/components/TeachersSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
+import SchoolInfoSection from "@/components/SchoolInfoSection";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
         <FunFactsSection />
         <StatsSection />
         <AgeProgramsSection />
+        <SchoolInfoSection />
         <TeachersSection />
         <TestimonialsSection />
       </main>
