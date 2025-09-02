@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, ArrowRight, Star, Rocket } from "lucide-react";
-const heroImage = "https://cdn.builder.io/api/v1/image/assets%2F56e1d9932d634c60acef602bc721d4a0%2F80aeeb2426b64748a685912db2080b21?format=webp&width=1200";
+const heroImageBase = "https://cdn.builder.io/api/v1/image/assets%2F56e1d9932d634c60acef602bc721d4a0%2F80aeeb2426b64748a685912db2080b21?format=webp";
 import { school } from "@/data/school";
 
 const HeroSection = () => {
