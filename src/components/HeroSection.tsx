@@ -20,7 +20,7 @@ const HeroSection = () => {
                 <Star key={i} size={20} className="text-yellow-400 fill-current" />
               ))}
             </div>
-            <span className="text-muted-foreground">Trusted by 1000+ families</span>
+            <span className="text-muted-foreground">{school.stats.totals.students ?? '—'} Students • {school.stats.totals.teachers ?? '—'} Teachers</span>
             <span className="ml-3 px-3 py-1 rounded-full bg-white/70 text-xs text-foreground shadow-soft">{school.name} • {school.location}</span>
           </div>
           
