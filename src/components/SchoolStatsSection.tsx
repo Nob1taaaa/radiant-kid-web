@@ -34,6 +34,12 @@ const SchoolStatsSection = () => {
       {/* cute floating shapes */}
       <div className="absolute -top-10 -left-10 w-28 h-28 bg-primary/10 rounded-full animate-bounce-gentle" />
       <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-secondary/10 rounded-full animate-bounce-gentle" style={{ animationDelay: '1s' }} />
+      <CuteStickers stickers={[
+        { emoji: '🌈', top: '8%', left: '6%' },
+        { emoji: '⭐️', top: '12%', right: '12%', delay: '0.2s' },
+        { emoji: '🎉', bottom: '10%', left: '10%', delay: '0.6s' },
+        { emoji: '🧩', bottom: '6%', right: '8%', delay: '0.8s' },
+      ]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
