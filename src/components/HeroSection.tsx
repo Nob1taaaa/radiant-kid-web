@@ -32,9 +32,11 @@ const HeroSection = () => {
             </div>
 
             {/* Outside design curves hugging the circle */}
-            <svg className="pointer-events-none absolute right-[-6%] top-1/2 -translate-y-1/2 w-[42%] h-[66%]" viewBox="0 0 200 300" fill="none" aria-hidden>
-              <path d="M20 20 A 160 160 0 0 1 180 150" stroke="hsl(220 40% 25% / 0.25)" strokeWidth="14" strokeLinecap="round" />
-              <path d="M30 40 A 140 140 0 0 1 170 150" stroke="hsl(220 40% 25% / 0.35)" strokeWidth="8" strokeLinecap="round" />
+            <svg className="pointer-events-none absolute inset-0 overflow-visible" viewBox="0 0 100 100" fill="none" aria-hidden>
+              <g transform="translate(50,50)">
+                <circle r="52" fill="none" stroke="hsl(220 40% 25% / 0.25)" strokeWidth="4" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
+                <circle r="57" fill="none" stroke="hsl(220 40% 25% / 0.35)" strokeWidth="8" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
+              </g>
             </svg>
           </div>
         </div>
