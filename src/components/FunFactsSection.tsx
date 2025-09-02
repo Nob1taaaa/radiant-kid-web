@@ -50,9 +50,8 @@ const FunFactsSection = () => {
               <span className="text-primary">Every Day</span> At {school.name}!
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-              Our school is filled with joy, laughter, and incredible moments of discovery.
-              Here are some fun facts that make {school.name} such a special place for children to grow and learn.
+            <p className="text-base text-muted-foreground mb-8 leading-relaxed">
+              Joy, laughter, and daily discoveries—here are some fun facts!
             </p>
 
             {/* Facts Grid */}

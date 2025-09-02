@@ -44,9 +44,8 @@ const FacilitiesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             World-Class <span className="text-secondary">Facilities</span> For Your Child
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Our state-of-the-art facilities provide a safe, nurturing, and stimulating environment 
-            where children can learn, play, and grow to their fullest potential.
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Safe, happy spaces where children learn, play, and grow.
           </p>
         </div>
 

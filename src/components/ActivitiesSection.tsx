@@ -20,28 +20,28 @@ const activities = [
   {
     icon: BookOpen,
     title: "Reading Corner",
-    description: "Story time and early literacy development through engaging books and interactive reading.",
+    description: "Story time and early literacy.",
     color: "from-green-400 to-teal-400",
     bgColor: "bg-green-50"
   },
   {
     icon: Gamepad2,
     title: "Fun Games",
-    description: "Educational games and puzzles that make learning enjoyable while building problem-solving skills.",
+    description: "Smart games and puzzles.",
     color: "from-yellow-400 to-orange-400",
     bgColor: "bg-yellow-50"
   },
   {
     icon: Globe,
     title: "World Exploration",
-    description: "Learning about different cultures, countries, and communities through interactive activities.",
+    description: "Explore the world together.",
     color: "from-blue-400 to-cyan-400",
     bgColor: "bg-blue-50"
   },
   {
     icon: Calculator,
     title: "Early Math",
-    description: "Number recognition, counting, and basic math concepts through hands-on learning experiences.",
+    description: "Numbers made friendly.",
     color: "from-indigo-400 to-purple-400",
     bgColor: "bg-indigo-50"
   }
@@ -59,9 +59,8 @@ const ActivitiesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Fun Learning <span className="text-primary">Activities</span> For Kids
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We believe learning should be fun! Our diverse range of activities ensures every child 
-            finds something they love while developing essential skills for their future.
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Learning is play. Every child finds a favorite and grows new skills.
           </p>
         </div>
 

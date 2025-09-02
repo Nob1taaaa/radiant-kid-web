@@ -20,7 +20,7 @@ const PlayschoolSection = () => {
                   <Award className="text-white" size={24} />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Better Training And Programs</h4>
-                <p className="text-muted-foreground text-sm">Comprehensive curriculum designed by education experts</p>
+                <p className="text-muted-foreground text-sm">Expert‑designed curriculum</p>
               </div>
               
               <div className="text-center">
@@ -28,7 +28,7 @@ const PlayschoolSection = () => {
                   <Clock className="text-white" size={24} />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Advanced Research Centers</h4>
-                <p className="text-muted-foreground text-sm">Latest educational research and methodologies</p>
+                <p className="text-muted-foreground text-sm">Latest methods</p>
               </div>
               
               <div className="text-center">
@@ -36,7 +36,7 @@ const PlayschoolSection = () => {
                   <BookOpen className="text-white" size={24} />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Highly Qualified ACT</h4>
-                <p className="text-muted-foreground text-sm">Certified teachers with specialized training</p>
+                <p className="text-muted-foreground text-sm">Certified teachers</p>
               </div>
               
               <div className="text-center">
@@ -44,7 +44,7 @@ const PlayschoolSection = () => {
                   <Heart className="text-white" size={24} />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Kid's Care Integrated Program</h4>
-                <p className="text-muted-foreground text-sm">Holistic approach to child development</p>
+                <p className="text-muted-foreground text-sm">Whole‑child care</p>
               </div>
             </div>
             

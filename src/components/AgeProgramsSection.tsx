@@ -41,9 +41,8 @@ const AgeProgramsSection = () => {
             We Meet Kids At Their Level{" "}
             <span className="text-primary">Regardless Of Their Age</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Our age-appropriate programs are designed to meet each child where they are, 
-            fostering growth and development at every stage of their early years.
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Programs tailored to every age—meeting kids where they are.
           </p>
         </div>
         
