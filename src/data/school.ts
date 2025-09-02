@@ -39,6 +39,16 @@ export const school = {
     whatsapp: "",
     email: null as string | null,
   },
+  stats: {
+    udise: null as string | null,
+    yearEstablished: null as number | null,
+    category: null as string | null,
+    coEd: null as boolean | null,
+    classesOffered: [] as string[],
+    totals: { students: null as number | null, teachers: null as number | null },
+    enrollmentByClass: [] as { classLabel: string; students: number }[],
+    facilities: [] as { label: string; value: boolean | null }[],
+  },
 } as const;
 
 export type School = typeof school;
