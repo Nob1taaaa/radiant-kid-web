@@ -13,7 +13,7 @@ const SchoolInfoSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center bg-primary/10 rounded-full px-6 py-2 mb-4">
+          <div className="inline-flex items-center bg-primary/10 rounded-full px-6 py-2 mb-4 shadow-soft">
             <School className="text-primary mr-2" size={18} />
             <span className="text-primary font-semibold">Our School</span>
           </div>
@@ -25,7 +25,7 @@ const SchoolInfoSection = () => {
 
         {/* Overview + Curriculum */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
+          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-4">
               <Building2 className="text-orange-medium" />
               <h3 className="text-2xl font-bold">Overview</h3>
@@ -38,7 +38,7 @@ const SchoolInfoSection = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
+          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-4">
               <BookOpen className="text-teal-medium" />
               <h3 className="text-2xl font-bold">Curriculum & Methodology</h3>
@@ -54,7 +54,7 @@ const SchoolInfoSection = () => {
 
         {/* Levels + Facilities */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 shadow-soft">
+          <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
             <h3 className="text-2xl font-bold mb-4">Levels of Schooling</h3>
             <ul className="space-y-3">
               {school.levels.map((l) => (
@@ -66,7 +66,7 @@ const SchoolInfoSection = () => {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-50 to-teal-50 rounded-3xl p-8 shadow-soft">
+          <div className="bg-gradient-to-br from-orange-50 to-teal-50 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
             <h3 className="text-2xl font-bold mb-4">School Facilities</h3>
             <ul className="grid md:grid-cols-2 gap-3">
               {school.facilities.map((f) => (
@@ -80,7 +80,7 @@ const SchoolInfoSection = () => {
         </div>
 
         {/* Admissions */}
-        <div className="bg-white rounded-3xl p-8 shadow-soft mb-12">
+        <div className="bg-white rounded-3xl p-8 shadow-soft mb-12 hover:shadow-strong transition-all">
           <h3 className="text-2xl font-bold mb-3">Admissions</h3>
           <p className="text-muted-foreground leading-relaxed mb-4">{school.admissions}</p>
           <div className="grid md:grid-cols-2 gap-6">
@@ -92,7 +92,7 @@ const SchoolInfoSection = () => {
                 ))}
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 shadow-soft">
               <h4 className="font-semibold mb-4">School Timings</h4>
               <ul className="space-y-2">
                 {school.hours.map(({ day, time }) => (
@@ -107,7 +107,7 @@ const SchoolInfoSection = () => {
         </div>
 
         {/* Contact */}
-        <div className="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-8 shadow-medium">
+        <div className="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-8 shadow-strong">
           <div className="grid md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-2">
               <h3 className="text-2xl font-bold mb-2">Contact & Visit</h3>
