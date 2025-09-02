@@ -35,8 +35,8 @@ export const school = {
   ],
   address: "Near Lalimakot, Singraur, Varanasi, Uttar Pradesh",
   contact: {
-    phone: "+91-00000-00000",
-    whatsapp: "+91-00000-00000",
+    phone: "",
+    whatsapp: "",
     email: null as string | null,
   },
 } as const;
