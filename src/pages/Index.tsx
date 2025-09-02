@@ -30,6 +30,7 @@ const Index = () => {
         <AgeProgramsSection />
         <SchoolInfoSection />
         <SchoolStatsSection />
+        <ZigZagCardsSection />
         <TeachersSection />
         <TestimonialsSection />
       </main>
