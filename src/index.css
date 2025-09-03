@@ -195,7 +195,8 @@ All colors MUST be HSL.
   object-fit: cover;
   width: 100%;
   height: 100%;
-  object-position: 0 0;
+  object-position: center;
+  transform-origin: center;
   transition: all 0.5s ease-in-out 0s;
 }
 .inst-card .inst-bottom {
@@ -256,7 +257,8 @@ All colors MUST be HSL.
 }
 .inst-card:hover .inst-profile img,
 .inst-card:hover .inst-profile svg {
-  transform: scale(2.2);
-  object-position: 0 25px;
+  transform: scale(1.6);
+  object-position: center;
+  transform-origin: center;
   transition: all 0.5s ease-in-out 0.5s;
 }
