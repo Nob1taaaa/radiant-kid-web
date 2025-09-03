@@ -1,4 +1,4 @@
-import { Star, Heart, Award } from "lucide-react";
+import { Star, Heart, Award, Mail } from "lucide-react";
 import teacher1 from "@/assets/teacher-1.jpg";
 import teacher2 from "@/assets/teacher-2.jpg";
 
@@ -45,50 +45,45 @@ const TeachersSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {teachers.map((teacher, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-gradient-card rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-in group"
+              className="inst-card animate-fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="text-center">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mx-auto shadow-medium">
-                    <img 
-                      src={teacher.image} 
-                      alt={teacher.name}
-                      className="w-full h-full object-cover"
-                    />
+              <button className="inst-mail" aria-label="Email">
+                <Mail size={24} />
+              </button>
+
+              <div className="inst-profile">
+                <img src={teacher.image} alt={teacher.name} />
+              </div>
+
+              <div className="inst-bottom">
+                <div className="content">
+                  <span className="name">{teacher.name}</span>
+                  <span className="about-me">{teacher.title} • {teacher.experience}</span>
+
+                  <div className="mt-4">
+                    {teacher.specialties.map((specialty, idx) => (
+                      <span key={idx} className="inline-block bg-white/30 text-white rounded-full px-3 py-1 text-xs mr-2 mb-2">
+                        {specialty}
+                      </span>
+                    ))}
                   </div>
-                  
-                  {/* Floating badge */}
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-success rounded-full px-4 py-2 shadow-medium">
-                    <div className="flex items-center space-x-1">
+
+                  <div className="flex items-center justify-center gap-4 mt-4">
+                    <div className="flex items-center gap-1 text-white/90 text-sm">
                       <Star size={16} className="text-white fill-current" />
-                      <span className="text-white font-semibold text-sm">{teacher.rating}</span>
+                      <span>{teacher.rating}</span>
                     </div>
-                  </div>
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-2 text-foreground">{teacher.name}</h3>
-                <div className="text-primary font-semibold mb-1">{teacher.title}</div>
-                <div className="text-muted-foreground mb-4">{teacher.experience}</div>
-                
-                <div className="space-y-2 mb-6">
-                  {teacher.specialties.map((specialty, idx) => (
-                    <div key={idx} className="inline-block bg-muted rounded-full px-3 py-1 text-sm text-muted-foreground mx-1">
-                      {specialty}
+                    <div className="flex items-center gap-1 text-white/90 text-sm">
+                      <Heart size={16} className="text-white" />
+                      <span>Loved by kids</span>
                     </div>
-                  ))}
-                </div>
-                
-                <div className="flex justify-center space-x-4">
-                  <div className="flex items-center space-x-1">
-                    <Heart size={16} className="text-red-500" />
-                    <span className="text-sm text-muted-foreground">Loved by kids</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Award size={16} className="text-yellow-500" />
-                    <span className="text-sm text-muted-foreground">Certified</span>
+                    <div className="flex items-center gap-1 text-white/90 text-sm">
+                      <Award size={16} className="text-white" />
+                      <span>Certified</span>
+                    </div>
                   </div>
                 </div>
               </div>

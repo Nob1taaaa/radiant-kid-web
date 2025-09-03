@@ -57,18 +57,17 @@ const FunFactsSection = () => {
             {/* Facts Grid */}
             <div className="grid md:grid-cols-2 gap-6">
               {facts.map((fact, index) => (
-                <div 
-                  key={index}
-                  className="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:transform hover:scale-105 animate-fade-in group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className={`w-14 h-14 bg-gradient-to-br ${fact.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <fact.icon size={24} className="text-white" />
+                <div key={index} className="amz-card animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <span className="amz-glass" />
+                  <div className="amz-content">
+                    <div className={`w-14 h-14 bg-gradient-to-br ${fact.color} rounded-xl flex items-center justify-center mb-4`}>
+                      <fact.icon size={24} className="text-white" />
+                    </div>
+
+                    <div className="text-3xl font-bold text-white mb-2">{fact.number}</div>
+                    <div className="text-lg font-semibold text-white mb-1">{fact.title}</div>
+                    <div className="text-white/80 text-sm">{fact.description}</div>
                   </div>
-                  
-                  <div className="text-3xl font-bold text-foreground mb-2">{fact.number}</div>
-                  <div className="text-lg font-semibold text-foreground mb-1">{fact.title}</div>
-                  <div className="text-muted-foreground text-sm">{fact.description}</div>
                 </div>
               ))}
             </div>

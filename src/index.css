@@ -129,3 +129,237 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes rotBGimg {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Tilt animation for AgeProgramsSection cards */
+.age-tilt-grid {
+  position: relative;
+}
+.age-tilt-card {
+  position: relative;
+  transition: transform 0.5s ease;
+  transform: rotate(calc(var(--r) * 1deg));
+}
+.age-tilt-grid:hover .age-tilt-card {
+  transform: rotate(0deg);
+}
+
+/* Cute Instructor Card animation */
+.inst-card {
+  width: 100%;
+  height: 320px;
+  background: #ffffff;
+  border-radius: 32px;
+  padding: 3px;
+  position: relative;
+  box-shadow: #604b4a30 0px 70px 30px -50px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Amazing Things section card animation */
+.amz-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #171717;
+  padding: 3px;
+  min-height: 254px;
+  box-shadow: 0px 0px 3px 1px #00000088;
+  cursor: pointer;
+}
+.amz-content {
+  border-radius: 7px;
+  background: #171717;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+.amz-content::before {
+  opacity: 0;
+  transition: opacity 300ms;
+  content: " ";
+  display: block;
+  background: #fff5;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  filter: blur(50px);
+}
+.amz-card:hover .amz-content::before {
+  opacity: 1;
+}
+.amz-card::before,
+.amz-card::after {
+  opacity: 1;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 300px;
+  transition: opacity 300ms;
+  animation: amz-rot-a 3000ms infinite linear;
+  z-index: 0;
+}
+.amz-card::before {
+  transform: rotate(0deg) translateY(50%);
+  background: linear-gradient(90deg, #ff2288, transparent);
+  top: 0;
+  left: 0;
+}
+.amz-card::after {
+  transform: rotate(0deg) translateY(-50%);
+  background: linear-gradient(90deg, transparent, #2268ff);
+  bottom: 0;
+  right: 0;
+  animation-name: amz-rot-b;
+}
+.amz-glass { display: none; }
+@keyframes amz-rot-a {
+  0% { transform: rotate(0deg) translateY(50%); }
+  100% { transform: rotate(360deg) translateY(50%); }
+}
+@keyframes amz-rot-b {
+  0% { transform: rotate(0deg) translateY(-50%); }
+  100% { transform: rotate(360deg) translateY(-50%); }
+}
+.inst-card .inst-mail {
+  position: absolute;
+  right: 2rem;
+  top: 1.4rem;
+  background: transparent;
+  border: none;
+  z-index: 3;
+}
+.inst-card .inst-mail svg {
+  stroke: #fbb9b6;
+  stroke-width: 3px;
+}
+.inst-card .inst-mail svg:hover {
+  stroke: #f55d56;
+}
+.inst-card .inst-profile {
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  top: 3px;
+  left: 3px;
+  border-radius: 29px;
+  z-index: 1;
+  border: 0px solid #fbb9b6;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+.inst-card .inst-profile img,
+.inst-card .inst-profile svg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  transform-origin: center;
+  transition: all 0.5s ease-in-out 0s;
+}
+.inst-card .inst-bottom {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  background: #fbb9b6;
+  top: 80%;
+  border-radius: 29px;
+  z-index: 2;
+  box-shadow: rgba(96, 75, 74, 0.188) 0px 5px 5px 0px inset;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.inst-card .inst-bottom .content {
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 160px;
+}
+.inst-card .inst-bottom .content .name {
+  display: block;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+.inst-card .inst-bottom .content .about-me {
+  display: block;
+  font-size: 0.9rem;
+  color: white;
+  margin-top: 0.75rem;
+}
+.inst-card:hover {
+  border-top-left-radius: 55px;
+}
+.inst-card:hover .inst-bottom {
+  top: 20%;
+  border-radius: 80px 29px 29px 29px;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+.inst-card:hover .inst-profile {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  z-index: 3;
+  border: 7px solid #fbb9b6;
+  box-shadow: rgba(96, 75, 74, 0.188) 0px 5px 5px 0px;
+  transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+}
+.inst-card:hover .inst-profile:hover {
+  transform: scale(1.15);
+  border-radius: 16px;
+}
+.inst-card:hover .inst-profile img,
+.inst-card:hover .inst-profile svg {
+  transform: scale(1.6);
+  object-position: center;
+  transform-origin: center;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+/* Animated border utility for SchoolInfoSection cards (subtle color pulse, no rotation) */
+.animated-border {
+  position: relative;
+  border-radius: 1.5rem;
+  animation: border-color-pulse 8s ease-in-out infinite;
+}
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: inherit;
+  background: var(--border-anim-color, hsl(var(--orange-medium)/0.8));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+@keyframes border-color-pulse {
+  0%, 100% {
+    --border-anim-color: hsl(var(--orange-medium)/0.7);
+  }
+  50% {
+    --border-anim-color: hsl(var(--orange-light)/0.7);
+  }
+}

@@ -32,7 +32,7 @@ const SchoolInfoSection = () => {
 
         {/* Overview + Curriculum */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
+          <div className="animated-border bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-4">
               <Building2 className="text-orange-medium" />
               <h3 className="text-2xl font-bold">Overview</h3>
@@ -45,7 +45,7 @@ const SchoolInfoSection = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
+          <div className="animated-border bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-4">
               <BookOpen className="text-teal-medium" />
               <h3 className="text-2xl font-bold">Curriculum & Methodology</h3>
@@ -61,7 +61,7 @@ const SchoolInfoSection = () => {
 
         {/* Levels + Facilities */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
+          <div className="animated-border bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
             <h3 className="text-2xl font-bold mb-4">Levels of Schooling</h3>
             <ul className="space-y-3">
               {school.levels.map((l) => (
@@ -73,7 +73,7 @@ const SchoolInfoSection = () => {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-50 to-teal-50 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
+          <div className="animated-border bg-gradient-to-br from-orange-50 to-teal-50 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
             <h3 className="text-2xl font-bold mb-4">School Facilities</h3>
             <ul className="grid md:grid-cols-2 gap-3">
               {school.facilities.map((f) => (
@@ -87,7 +87,7 @@ const SchoolInfoSection = () => {
         </div>
 
         {/* Admissions */}
-        <div className="bg-white rounded-3xl p-8 shadow-soft mb-12 hover:shadow-strong transition-all">
+        <div className="animated-border bg-white rounded-3xl p-8 shadow-soft mb-12 hover:shadow-strong transition-all">
           <h3 className="text-2xl font-bold mb-3">Admissions</h3>
           <p className="text-muted-foreground leading-relaxed mb-4">{school.admissions}</p>
           <div className="grid md:grid-cols-2 gap-6">
