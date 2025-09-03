@@ -32,7 +32,7 @@ const SchoolInfoSection = () => {
 
         {/* Overview + Curriculum */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
+          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1" style={{ border: '1px solid rgba(103, 224, 171, 1)' }}>
             <div className="flex items-center gap-3 mb-4">
               <Building2 className="text-orange-medium" />
               <h3 className="text-2xl font-bold">Overview</h3>
