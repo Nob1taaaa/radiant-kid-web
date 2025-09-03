@@ -138,3 +138,16 @@ All colors MUST be HSL.
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+
+/* Tilt animation for AgeProgramsSection cards */
+.age-tilt-grid {
+  position: relative;
+}
+.age-tilt-card {
+  position: relative;
+  transition: transform 0.5s ease;
+  transform: rotate(calc(var(--r) * 1deg));
+}
+.age-tilt-grid:hover .age-tilt-card {
+  transform: rotate(0deg);
+}
