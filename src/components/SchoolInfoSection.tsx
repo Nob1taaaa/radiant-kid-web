@@ -87,7 +87,7 @@ const SchoolInfoSection = () => {
         </div>
 
         {/* Admissions */}
-        <div className="bg-white rounded-3xl p-8 shadow-soft mb-12 hover:shadow-strong transition-all">
+        <div className="bg-white rounded-3xl p-8 shadow-soft mb-12 hover:shadow-strong transition-all" style={{ border: '1px solid rgba(233, 44, 44, 1)' }}>
           <h3 className="text-2xl font-bold mb-3">Admissions</h3>
           <p className="text-muted-foreground leading-relaxed mb-4">{school.admissions}</p>
           <div className="grid md:grid-cols-2 gap-6">
