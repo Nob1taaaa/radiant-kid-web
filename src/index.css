@@ -163,6 +163,96 @@ All colors MUST be HSL.
   box-shadow: #604b4a30 0px 70px 30px -50px;
   transition: all 0.5s ease-in-out;
 }
+
+/* Amazing Things section card animation */
+.amz-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #171717;
+  min-height: 254px;
+  box-shadow: 0px 0px 3px 1px #00000088;
+  cursor: pointer;
+}
+.amz-content {
+  border-radius: 10px;
+  background: #171717;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+.amz-content::before {
+  opacity: 0;
+  transition: opacity 300ms;
+  content: " ";
+  display: block;
+  background: #fff5;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  filter: blur(50px);
+}
+.amz-card:hover .amz-content::before {
+  opacity: 1;
+}
+.amz-card::before,
+.amz-card::after {
+  opacity: 1;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 300px;
+  transition: opacity 300ms;
+  animation: amz-rot-a 3000ms infinite linear;
+  animation-play-state: paused;
+}
+.amz-card::before {
+  transform: rotate(0deg) translateY(50%);
+  background: linear-gradient(90deg, #ff2288, transparent);
+  top: 0;
+  left: 0;
+}
+.amz-card::after {
+  transform: rotate(0deg) translateY(-50%);
+  background: linear-gradient(90deg, transparent, #2268ff);
+  bottom: 0;
+  right: 0;
+  animation-name: amz-rot-b;
+}
+.amz-card:hover::before,
+.amz-card:hover::after {
+  opacity: 1;
+  animation-play-state: running;
+}
+.amz-card:hover .amz-glass {
+  opacity: 0;
+}
+.amz-glass {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #17171733;
+  backdrop-filter: blur(50px);
+  z-index: 1;
+  transition-duration: 0.5s;
+}
+@keyframes amz-rot-a {
+  0% { transform: rotate(0deg) translateY(50%); }
+  100% { transform: rotate(360deg) translateY(50%); }
+}
+@keyframes amz-rot-b {
+  0% { transform: rotate(0deg) translateY(-50%); }
+  100% { transform: rotate(360deg) translateY(-50%); }
+}
 .inst-card .inst-mail {
   position: absolute;
   right: 2rem;
