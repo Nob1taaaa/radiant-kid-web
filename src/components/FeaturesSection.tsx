@@ -4,7 +4,7 @@ const features = [
   {
     icon: BookOpen,
     title: "Interactive Learning",
-    description: "Engaging hands-on activities that make learning fun and memorable for every child.",
+    description: "Hands‑on fun that makes learning stick.",
     color: "from-orange-400 to-red-400",
     bgColor: "bg-orange-50",
     stats: "95% engagement rate"
@@ -12,7 +12,7 @@ const features = [
   {
     icon: Heart,
     title: "Caring Teachers",
-    description: "Passionate educators who nurture each child's unique potential with love and expertise.",
+    description: "Caring teachers who bring out the best.",
     color: "from-teal-400 to-blue-400", 
     bgColor: "bg-teal-50",
     stats: "1:8 teacher ratio"
@@ -20,7 +20,7 @@ const features = [
   {
     icon: Users,
     title: "Social Skills",
-    description: "Building friendships and communication skills in a supportive, inclusive environment.",
+    description: "Friends, confidence, and great communication.",
     color: "from-purple-400 to-pink-400",
     bgColor: "bg-purple-50",
     stats: "100% confidence boost"
@@ -28,7 +28,7 @@ const features = [
   {
     icon: Trophy,
     title: "Achievement Focus",
-    description: "Celebrating every milestone and helping children reach their full potential every day.",
+    description: "Small wins celebrated, every day.",
     color: "from-green-400 to-teal-400",
     bgColor: "bg-green-50",
     stats: "Daily progress tracking"
@@ -51,9 +51,8 @@ const FeaturesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             What Makes Us <span className="text-primary">Special</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We're committed to providing exceptional early childhood education that prepares 
-            your child for a bright future while keeping them happy and engaged.
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Joyful early learning, strong basics, and lots of smiles.
           </p>
         </div>
 

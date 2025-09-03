@@ -1,91 +1,77 @@
 import { Button } from "@/components/ui/button";
-import { Play, ArrowRight, Star } from "lucide-react";
-import heroImage from "@/assets/hero-children.jpg";
+import { Play, ArrowRight, Star, Rocket } from "lucide-react";
+const heroImageBase = "https://cdn.builder.io/api/v1/image/assets%2F56e1d9932d634c60acef602bc721d4a0%2F80aeeb2426b64748a685912db2080b21?format=webp";
+import { school } from "@/data/school";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-hero min-h-screen flex items-center relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full animate-bounce-gentle"></div>
-      <div className="absolute top-1/3 right-10 w-16 h-16 bg-secondary/10 rounded-full animate-bounce-gentle" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-accent/10 rounded-full animate-bounce-gentle" style={{ animationDelay: '2s' }}></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left content */}
-        <div className="animate-fade-in">
+    <section className="min-h-[80vh] flex items-center relative overflow-hidden bg-gradient-hero">
+      {/* Decorative curves and rocket */}
+      <svg className="pointer-events-none absolute -bottom-8 right-0 w-[60%] md:w-[45%] text-foreground/15" viewBox="0 0 600 180" fill="none" aria-hidden>
+        <path d="M0 160 C160 120 280 40 600 100" stroke="currentColor" strokeWidth="12" strokeLinecap="round"/>
+        <path d="M0 180 C200 120 320 60 600 120" stroke="currentColor" strokeWidth="6" strokeLinecap="round"/>
+      </svg>
+      <div className="absolute top-6 right-6 text-secondary/80 animate-bounce-gentle hidden md:block">
+        <Rocket size={40} />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
+        {/* Left - Image circle */}
+        <div className="order-1 lg:order-none animate-fade-in">
+          <div className="relative w-full max-w-xl mx-auto">
+            {/* Main circle image */}
+            <div className="relative aspect-square rounded-full overflow-hidden shadow-strong bg-white">
+              <img
+                src={`${heroImageBase}&width=1200`}
+                srcSet={`${heroImageBase}&width=800 800w, ${heroImageBase}&width=1200 1200w, ${heroImageBase}&width=1800 1800w, ${heroImageBase}&width=2400 2400w`}
+                sizes="(max-width: 1024px) 90vw, 40vw"
+                alt="Happy children going to school"
+                className="w-full h-full object-cover"
+                loading="eager" decoding="async"
+              />
+            </div>
+
+            {/* Outside design curves hugging the circle */}
+            <svg className="pointer-events-none absolute inset-0 overflow-visible" viewBox="0 0 100 100" fill="none" aria-hidden>
+              <g transform="translate(50,50)">
+                <circle r="52" fill="none" className="text-foreground/25" stroke="currentColor" strokeWidth="4" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
+                <circle r="57" fill="none" className="text-secondary/60" stroke="currentColor" strokeWidth="8" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        {/* Right - Content */}
+        <div className="animate-slide-in-right lg:pl-8">
           <div className="flex items-center space-x-2 mb-4">
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={20} className="text-yellow-400 fill-current" />
+                <Star key={i} size={20} className="text-yellow-400" fill="currentColor" stroke="currentColor" />
               ))}
             </div>
-            <span className="text-muted-foreground">Trusted by 1000+ families</span>
+            <span className="text-muted-foreground">{school.stats.totals.students ?? '—'} Students • {school.stats.totals.teachers ?? '—'} Teachers</span>
           </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            We Prepare Your{" "}
-            <span className="text-primary">Child</span>{" "}
-            <span className="text-secondary">For Life</span>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-3 text-foreground">
+            Nurturing Bright Minds for a Brighter Tomorrow
           </h1>
-          
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Our comprehensive early childhood education program nurtures creativity, 
-            builds confidence, and develops essential life skills through play-based learning 
-            and individualized attention.
+          <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-xl">
+            Early education designed to inspire curiosity, creativity, and confidence.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button className="bg-gradient-primary hover:opacity-90 text-white px-8 py-4 rounded-full shadow-medium transition-all duration-300 flex items-center space-x-2">
-              <span>Start Learning</span>
-              <ArrowRight size={20} />
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <Button className="bg-gradient-primary hover:opacity-90 text-white px-8 py-4 rounded-full shadow-medium transition-all duration-300">
+              Admission Now
             </Button>
-            <Button variant="outline" className="border-2 border-foreground/20 hover:bg-foreground/5 px-8 py-4 rounded-full flex items-center space-x-2">
-              <Play size={20} />
-              <span>Take A Tour</span>
+            <Button variant="outline" className="border-2 border-foreground/20 hover:bg-foreground/5 px-8 py-4 rounded-full flex items-center gap-2">
+              <Play size={18} /> Watch Tour
             </Button>
           </div>
-          
-          <div className="flex items-center space-x-8 text-sm text-muted-foreground">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-orange-medium rounded-full flex items-center justify-center">
-                <span className="text-white font-semibold text-xs">1</span>
-              </div>
-              <span>Flexible & Learning</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-teal-medium rounded-full flex items-center justify-center">
-                <span className="text-white font-semibold text-xs">2</span>
-              </div>
-              <span>Passionate Teachers</span>
-            </div>
-          </div>
-        </div>
-        
-        {/* Right content - Hero Image */}
-        <div className="relative animate-slide-in-right">
-          <div className="relative">
-            <div className="w-full aspect-square rounded-full overflow-hidden shadow-strong bg-gradient-card">
-              <img 
-                src={heroImage} 
-                alt="Happy children learning together" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-medium animate-bounce-gentle">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">4.9</div>
-                <div className="text-xs text-muted-foreground">Rating</div>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-medium animate-bounce-gentle" style={{ animationDelay: '0.5s' }}>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-secondary">25+</div>
-                <div className="text-xs text-muted-foreground">Teachers</div>
-              </div>
-            </div>
+
+          <div className="inline-flex items-center bg-white/70 backdrop-blur rounded-full px-4 py-2 shadow-soft text-sm">
+            <span className="font-semibold text-foreground">{school.name}</span>
+            <span className="mx-2">•</span>
+            <span className="text-muted-foreground">{school.location}</span>
           </div>
         </div>
       </div>

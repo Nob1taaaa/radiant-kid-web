@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { school } from "@/data/school";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,9 +13,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">K</span>
+              <span className="text-white font-bold text-xl">{school.name.charAt(0)}</span>
             </div>
-            <span className="text-2xl font-bold text-foreground">Kidsa</span>
+            <span className="text-2xl font-bold text-foreground">{school.name}</span>
           </div>
 
           {/* Desktop Navigation */}

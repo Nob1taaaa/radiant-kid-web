@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import happyParents from "@/assets/happy-parents.jpg";
+import { school } from "@/data/school";
 
 const testimonials = [
   {
@@ -7,7 +8,7 @@ const testimonials = [
     role: "Mother of Emma (Age 4)",
     image: happyParents,
     rating: 5,
-    text: "Kidsa has been absolutely wonderful for our daughter Emma. The teachers are so caring and the programs are perfectly designed for her age. She's learned so much and made great friends!",
+    text: "The school has been absolutely wonderful for our daughter Emma. The teachers are so caring and the programs are perfectly designed for her age. She's learned so much and made great friends!",
     highlight: "Amazing teachers and programs!"
   },
   {
@@ -23,7 +24,7 @@ const testimonials = [
     role: "Mother of Sofia (Age 5)",
     image: happyParents,
     rating: 5,
-    text: "The preparation for kindergarten has been excellent. Sofia feels ready and excited for the next step. The balance of learning and play at Kidsa is exactly what we were looking for.",
+    text: "The preparation for kindergarten has been excellent. Sofia feels ready and excited for the next step. The balance of learning and play here is exactly what we were looking for.",
     highlight: "Perfect kindergarten preparation!"
   }
 ];
@@ -42,8 +43,8 @@ const TestimonialsSection = () => {
             What <span className="text-primary">Parents</span> Say About Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our amazing families have to say 
-            about their experience at Kidsa Learning Center.
+            Don't just take our word for it. Here's what our amazing families have to say
+            about their experience at {school.name}.
           </p>
         </div>
 

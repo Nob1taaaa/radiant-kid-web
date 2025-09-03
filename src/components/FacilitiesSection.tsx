@@ -44,9 +44,8 @@ const FacilitiesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             World-Class <span className="text-secondary">Facilities</span> For Your Child
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Our state-of-the-art facilities provide a safe, nurturing, and stimulating environment 
-            where children can learn, play, and grow to their fullest potential.
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Safe, happy spaces where children learn, play, and grow.
           </p>
         </div>
 
@@ -88,36 +87,7 @@ const FacilitiesSection = () => {
           ))}
         </div>
 
-        {/* Amenities Grid */}
-        <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 md:p-12">
-          <h3 className="text-3xl font-bold text-center mb-12">Additional <span className="text-primary">Amenities</span></h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {amenities.map((amenity, index) => (
-              <div 
-                key={index}
-                className="text-center animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-medium hover:scale-110 transition-transform duration-300">
-                  <amenity.icon size={24} className="text-white" />
-                </div>
-                <h4 className="text-lg font-bold mb-2 text-foreground">{amenity.title}</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">{amenity.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <Button className="bg-gradient-secondary hover:opacity-90 text-white px-8 py-4 rounded-full shadow-medium transition-all duration-300 mr-4">
-            Schedule a Tour
-          </Button>
-          <Button variant="outline" className="border-2 border-secondary/20 hover:bg-secondary/5 px-8 py-4 rounded-full">
-            View Virtual Tour
-          </Button>
-        </div>
       </div>
     </section>
   );
