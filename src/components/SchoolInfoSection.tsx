@@ -61,7 +61,7 @@ const SchoolInfoSection = () => {
 
         {/* Levels + Facilities */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
+          <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all" style={{ border: '1px solid rgba(102, 211, 235, 1)' }}>
             <h3 className="text-2xl font-bold mb-4">Levels of Schooling</h3>
             <ul className="space-y-3">
               {school.levels.map((l) => (
