@@ -4,7 +4,6 @@ import FeaturesSection from "@/components/FeaturesSection";
 import ActivitiesSection from "@/components/ActivitiesSection";
 import LearningSection from "@/components/LearningSection";
 import FacilitiesSection from "@/components/FacilitiesSection";
-import PlayschoolSection from "@/components/PlayschoolSection";
 import FunFactsSection from "@/components/FunFactsSection";
 import StatsSection from "@/components/StatsSection";
 import AgeProgramsSection from "@/components/AgeProgramsSection";
@@ -25,7 +24,6 @@ const Index = () => {
         <ActivitiesSection />
         <LearningSection />
         <FacilitiesSection />
-        <PlayschoolSection />
         <FunFactsSection />
         <StatsSection />
         <AgeProgramsSection />
