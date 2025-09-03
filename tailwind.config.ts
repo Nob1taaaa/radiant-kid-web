@@ -66,14 +66,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'navy-light': 'hsl(var(--navy-light))',
-				'navy-medium': 'hsl(var(--navy-medium))',
-				'navy-dark': 'hsl(var(--navy-dark))',
-				'gold-light': 'hsl(var(--gold-light))',
-				'gold-medium': 'hsl(var(--gold-medium))',
-				'green-light': 'hsl(var(--green-light))',
-				'green-medium': 'hsl(var(--green-medium))',
-				'gray-medium': 'hsl(var(--gray-medium))',
+				'orange-light': 'hsl(var(--orange-light))',
+				'orange-medium': 'hsl(var(--orange-medium))',
+				'orange-dark': 'hsl(var(--orange-dark))',
+				'teal-light': 'hsl(var(--teal-light))',
+				'teal-medium': 'hsl(var(--teal-medium))',
+				'blue-medium': 'hsl(var(--blue-medium))',
+				'purple-medium': 'hsl(var(--purple-medium))',
 				'red-medium': 'hsl(var(--red-medium))'
 			},
 			borderRadius: {

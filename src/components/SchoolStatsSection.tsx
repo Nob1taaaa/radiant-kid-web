@@ -1,13 +1,14 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, PieChart, Pie, Cell } from 'recharts';
-import { IdCard, GraduationCap, BookOpen, Building2, BarChart3, Users } from 'lucide-react';
+import { IdCard, GraduationCap, BookOpen, Building2, BadgeInfo, Sparkles } from 'lucide-react';
 import { school } from '@/data/school';
+import CuteStickers from '@/components/CuteStickers';
 
 const colors = [
-  'hsl(var(--primary))',
-  'hsl(var(--secondary))',
-  'hsl(var(--green-medium))',
-  'hsl(var(--navy-medium))',
-  'hsl(var(--gold-medium))',
+  'hsl(var(--orange-medium))',
+  'hsl(var(--teal-medium))',
+  'hsl(var(--blue-medium))',
+  'hsl(var(--purple-medium))',
+  'hsl(var(--red-medium))',
 ];
 
 const InfoCard = ({ icon: Icon, label, value }: { icon: any; label: string; value: string | number | null | undefined }) => (
@@ -29,16 +30,26 @@ const SchoolStatsSection = () => {
   const hasTotals = (totals.students ?? null) !== null || (totals.teachers ?? null) !== null;
 
   return (
-    <section className="py-20 bg-muted/20">
+    <section className="py-20 bg-gradient-to-br from-orange-light/10 via-white to-teal-light/10 relative overflow-hidden">
+      {/* cute floating shapes */}
+      <div className="absolute -top-10 -left-10 w-28 h-28 bg-primary/10 rounded-full animate-bounce-gentle" />
+      <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-secondary/10 rounded-full animate-bounce-gentle" style={{ animationDelay: '1s' }} />
+      <CuteStickers stickers={[
+        { emoji: '🌈', top: '8%', left: '6%' },
+        { emoji: '⭐️', top: '12%', right: '12%', delay: '0.2s' },
+        { emoji: '🎉', bottom: '10%', left: '10%', delay: '0.6s' },
+        { emoji: '🧩', bottom: '6%', right: '8%', delay: '0.8s' },
+      ]} />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center bg-primary/10 rounded-full px-6 py-2 mb-4">
-            <BarChart3 className="text-primary mr-2" size={18} />
-            <span className="text-primary font-semibold">School Statistics</span>
+            <BadgeInfo className="text-primary mr-2" size={18} />
+            <span className="text-primary font-semibold">Official School Stats</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Facts & Figures</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Comprehensive data about our educational institution and student community.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-2">At a Glance</h2>
+          <p className="text-muted-foreground">Verified details presented in a colorful, kid-friendly design.</p>
         </div>
 
         {/* Top info cards */}
@@ -54,7 +65,7 @@ const SchoolStatsSection = () => {
           {/* Enrollment chart */}
           {hasEnrollment && (
             <div className="bg-white rounded-3xl p-6 shadow-soft animate-fade-in">
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><BarChart3 className="text-primary" size={18}/> Enrollment by Class</h3>
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Sparkles className="text-primary" size={18}/> Enrollment by Class</h3>
               <div className="h-80">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={[...school.stats.enrollmentByClass]}>
@@ -77,7 +88,7 @@ const SchoolStatsSection = () => {
           {/* Students vs Teachers */}
           {hasTotals && (
             <div className="bg-white rounded-3xl p-6 shadow-soft animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Users className="text-secondary" size={18}/> Students vs Teachers</h3>
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Sparkles className="text-secondary" size={18}/> Students vs Teachers</h3>
               <div className="h-80">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
@@ -118,7 +129,7 @@ const SchoolStatsSection = () => {
         {/* Facilities checklist */}
         {school.stats.facilities.length > 0 && (
           <div className="mt-12 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8">
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2"><Building2 className="text-primary" size={18}/> Facilities</h3>
+            <h3 className="text-xl font-bold mb-6 flex items-center gap-2"><Sparkles className="text-primary" size={18}/> Facilities</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {school.stats.facilities.map((f, idx) => (
                 <div key={f.label} className="flex items-center gap-3 bg-white rounded-2xl px-4 py-3 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5">

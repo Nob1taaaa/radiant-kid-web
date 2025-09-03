@@ -8,63 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 220 14% 18%;
+    --background: 25 30% 98%;
+    --foreground: 210 15% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 14% 18%;
+    --card-foreground: 210 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 18%;
+    --popover-foreground: 210 15% 20%;
 
-    /* Professional school colors - Navy blue primary */
-    --primary: 220 80% 25%;
+    --primary: 25 95% 65%;
     --primary-foreground: 0 0% 100%;
 
-    /* Academic gold secondary */
-    --secondary: 45 85% 50%;
-    --secondary-foreground: 220 80% 25%;
+    --secondary: 195 85% 70%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 10% 96%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 25 15% 95%;
+    --muted-foreground: 210 15% 45%;
 
-    /* Professional accent - forest green */
-    --accent: 155 60% 35%;
+    --accent: 280 65% 70%;
     --accent-foreground: 0 0% 100%;
 
-    --success: 150 60% 45%;
+    --success: 150 80% 60%;
     --success-foreground: 0 0% 100%;
 
-    --destructive: 0 65% 50%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 10% 90%;
-    --input: 210 10% 95%;
-    --ring: 220 80% 25%;
+    --border: 25 15% 90%;
+    --input: 25 15% 90%;
+    --ring: 25 95% 65%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    /* Professional school color palette */
-    --navy-light: 220 60% 85%;
-    --navy-medium: 220 80% 25%;
-    --navy-dark: 220 90% 15%;
-    --gold-light: 45 75% 75%;
-    --gold-medium: 45 85% 50%;
-    --green-light: 155 40% 75%;
-    --green-medium: 155 60% 35%;
-    --gray-medium: 210 10% 60%;
-    --red-medium: 0 65% 50%;
+    /* Custom colors for kids theme */
+    --orange-light: 25 100% 85%;
+    --orange-medium: 25 95% 65%;
+    --orange-dark: 25 90% 55%;
+    --teal-light: 180 85% 75%;
+    --teal-medium: 195 85% 70%;
+    --blue-medium: 220 85% 70%;
+    --purple-medium: 280 65% 70%;
+    --red-medium: 5 85% 65%;
 
-    /* Professional gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--navy-dark)) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--gold-light)) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(220 60% 95%) 0%, hsl(210 20% 98%) 50%, hsl(45 60% 95%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 15% 98%) 100%);
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--orange-light)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--teal-light)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(25 100% 90%) 0%, hsl(25 90% 80%) 50%, hsl(180 85% 85%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(25 50% 97%) 100%);
 
-    /* Professional shadows */
-    --shadow-soft: 0 4px 15px -3px hsl(var(--primary) / 0.08);
-    --shadow-medium: 0 8px 25px -5px hsl(var(--primary) / 0.12);
-    --shadow-strong: 0 12px 35px -8px hsl(var(--primary) / 0.15);
+    /* Shadows */
+    --shadow-soft: 0 10px 30px -5px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 20px 40px -10px hsl(var(--primary) / 0.15);
+    --shadow-strong: 0 25px 50px -12px hsl(var(--primary) / 0.2);
 
     --radius: 1rem;
 

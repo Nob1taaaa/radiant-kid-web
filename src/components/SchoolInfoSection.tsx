@@ -1,181 +1,137 @@
-import { School, BookOpen, Building2, Bus, Shield, NotebookPen, Clock, MapPin, Phone, MessageCircle, Mail } from "lucide-react";
+import { School, BookOpen, Building2, Bus, Shield, NotebookPen, Clock, MapPin, Phone, MessageCircle } from "lucide-react";
 import { school } from "@/data/school";
+import CuteStickers from "@/components/CuteStickers";
 
 const badge = (text: string) => (
-  <span className="inline-block rounded-full px-4 py-2 text-sm font-semibold bg-primary/10 text-primary">{text}</span>
+  <span className="inline-block rounded-full px-3 py-1 text-xs font-semibold bg-white/70 backdrop-blur text-foreground shadow-soft">{text}</span>
 );
 
 const SchoolInfoSection = () => {
   return (
-    <section id="about" className="py-20 bg-white">{/* Professional geometric pattern background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="h-full w-full" 
-             style={{ 
-               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-               backgroundSize: '60px 60px'
-             }}
-        />
-      </div>
+    <section id="school-info" className="py-20 bg-gradient-to-br from-orange-light/10 via-white to-teal-light/10 relative overflow-hidden">
+      <div className="absolute -top-10 -left-10 w-32 h-32 bg-primary/10 rounded-full animate-bounce-gentle"></div>
+      <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full animate-bounce-gentle" style={{ animationDelay: "1s" }}></div>
+      <CuteStickers stickers={[
+        { emoji: "✨", top: "6%", left: "8%" },
+        { emoji: "🎈", top: "18%", right: "10%", delay: "0.3s" },
+        { emoji: "🧸", bottom: "12%", left: "12%", delay: "0.6s" },
+        { emoji: "🦒", bottom: "8%", right: "8%", delay: "0.9s" },
+      ]} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-primary/10 rounded-full px-6 py-2 mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-primary/10 rounded-full px-6 py-2 mb-4 shadow-soft">
             <School className="text-primary mr-2" size={18} />
-            <span className="text-primary font-semibold">About Our School</span>
+            <span className="text-primary font-semibold">Our School</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            {school.name}
+          <h2 className="text-4xl md:text-5xl font-bold mb-3">
+            {school.name} <span className="text-primary">— {school.location}</span>
           </h2>
-          <p className="text-secondary text-xl font-semibold mb-2">{school.location}</p>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">{school.tagline}</p>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">{school.tagline}</p>
         </div>
 
         {/* Overview + Curriculum */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 border border-primary/10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                <Building2 className="text-white" size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-primary">About Our School</h3>
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          <div className="animated-border bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center gap-3 mb-4">
+              <Building2 className="text-orange-medium" />
+              <h3 className="text-2xl font-bold">Overview</h3>
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-6">{school.overview}</p>
-            <div className="flex flex-wrap gap-2">
-              {badge("Experienced Faculty")}
-              {badge("Student-Centered Learning")}
-              {badge("Holistic Development")}
+            <p className="text-muted-foreground leading-relaxed">{school.overview}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {badge("Experienced Teachers")}
+              {badge("Child‑First Approach")}
+              {badge("Holistic Growth")}
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 border border-secondary/10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
-                <BookOpen className="text-secondary-foreground" size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-primary">Academic Approach</h3>
+          <div className="animated-border bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center gap-3 mb-4">
+              <BookOpen className="text-teal-medium" />
+              <h3 className="text-2xl font-bold">Curriculum & Methodology</h3>
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-6">{school.curriculum}</p>
-            <div className="flex flex-wrap gap-2">
-              {badge("Activity-Based Learning")}
-              {badge("Experiential Projects")}
+            <p className="text-muted-foreground leading-relaxed">{school.curriculum}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {badge("Activity Based")}
+              {badge("Projects & Play")}
               {badge("Strong Fundamentals")}
             </div>
           </div>
         </div>
 
         {/* Levels + Facilities */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all border border-primary/10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-green-medium rounded-lg flex items-center justify-center">
-                <NotebookPen className="text-white" size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-primary">Classes Offered</h3>
-            </div>
-            <div className="space-y-4">
-              {school.levels.map((level) => (
-                <div key={level} className="bg-muted/30 rounded-lg p-4">
-                  <h4 className="font-semibold text-primary mb-2">{level}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Comprehensive curriculum designed for this age group with focus on academic excellence and character building.
-                  </p>
-                </div>
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          <div className="animated-border bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
+            <h3 className="text-2xl font-bold mb-4">Levels of Schooling</h3>
+            <ul className="space-y-3">
+              {school.levels.map((l) => (
+                <li key={l} className="flex items-start gap-3">
+                  <NotebookPen className="mt-0.5 text-primary" size={18} />
+                  <span className="text-foreground">{l}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all border border-secondary/10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
-                <Shield className="text-secondary-foreground" size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-primary">Key Facilities</h3>
-            </div>
-            <div className="grid gap-3">
-              {school.facilities.map((facility) => (
-                <div key={facility} className="flex items-center gap-3 p-3 bg-muted/20 rounded-lg">
-                  <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-foreground text-sm">{facility}</span>
-                </div>
+          <div className="animated-border bg-gradient-to-br from-orange-50 to-teal-50 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
+            <h3 className="text-2xl font-bold mb-4">School Facilities</h3>
+            <ul className="grid md:grid-cols-2 gap-3">
+              {school.facilities.map((f) => (
+                <li key={f} className="flex items-start gap-3">
+                  <Shield className="mt-0.5 text-secondary" size={18} />
+                  <span className="text-foreground">{f}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
 
         {/* Admissions */}
-        <div id="admissions" className="bg-muted/30 rounded-2xl p-8 shadow-soft mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-primary mb-4">Admissions Process</h3>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">{school.admissions}</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <h4 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                <NotebookPen size={20} />
-                Required Documents
-              </h4>
-              <ul className="space-y-3">
-                {school.documents.map((doc) => (
-                  <li key={doc} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-foreground">{doc}</span>
-                  </li>
+        <div className="animated-border bg-white rounded-3xl p-8 shadow-soft mb-12 hover:shadow-strong transition-all">
+          <h3 className="text-2xl font-bold mb-3">Admissions</h3>
+          <p className="text-muted-foreground leading-relaxed mb-4">{school.admissions}</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold mb-2">Documents Required</h4>
+              <ul className="list-disc ml-5 text-foreground space-y-1">
+                {school.documents.map((d) => (
+                  <li key={d}>{d}</li>
                 ))}
               </ul>
             </div>
-            
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <h4 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                <Clock size={20} />
-                School Timings
-              </h4>
-              <div className="space-y-3">
+            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 shadow-soft">
+              <h4 className="font-semibold mb-4">School Timings</h4>
+              <ul className="space-y-2">
                 {school.hours.map(({ day, time }) => (
-                  <div key={day} className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
-                    <span className="font-medium text-foreground">{day}</span>
-                    <span className="text-primary font-semibold">{time}</span>
-                  </div>
+                  <li key={day} className="flex items-center justify-between text-sm">
+                    <span className="text-foreground">{day}</span>
+                    <span className="text-muted-foreground">{time}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
 
         {/* Contact */}
-        <div className="bg-primary text-white rounded-2xl p-8 shadow-medium">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-              <div className="space-y-4">
-                <p className="flex items-start gap-3">
-                  <MapPin size={20} className="mt-1 flex-shrink-0" /> 
-                  <span>{school.address}</span>
-                </p>
-                {school.contact.phone && (
-                  <p className="flex items-center gap-3">
-                    <Phone size={20} /> 
-                    <span>{school.contact.phone}</span>
-                  </p>
-                )}
-                <p className="flex items-center gap-3">
-                  <Mail size={20} /> 
-                  <span>{school.contact.email || 'info@devnathschool.edu'}</span>
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <a href="#contact" className="bg-white text-primary rounded-lg px-6 py-3 font-semibold text-center hover:bg-gray-50 transition">
-                Contact Us
-              </a>
+        <div className="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-8 shadow-strong">
+          <div className="grid md:grid-cols-3 gap-6 items-center">
+            <div className="md:col-span-2">
+              <h3 className="text-2xl font-bold mb-2">Contact & Visit</h3>
+              <p className="flex items-start gap-2 mb-2"><MapPin size={18} /> <span>{school.address}</span></p>
               {school.contact.phone && (
-                <a href={`tel:${school.contact.phone}`} className="bg-secondary text-secondary-foreground rounded-lg px-6 py-3 font-semibold text-center hover:bg-secondary/90 transition">
-                  Call Now
+                <p className="flex items-center gap-2"><Phone size={18} /> <span>{school.contact.phone}</span></p>
+              )}
+            </div>
+            <div className="flex gap-3 md:justify-end">
+              {school.contact.phone && (
+                <a href={`tel:${school.contact.phone}`} className="bg-white text-foreground rounded-full px-6 py-3 font-semibold shadow-strong hover:opacity-90 transition">Call Now</a>
+              )}
+              {school.contact.whatsapp && (
+                <a href={`https://wa.me/${String(school.contact.whatsapp).replace(/[^0-9]/g, "")}`} target="_blank" rel="noreferrer" className="bg-black/20 border border-white/40 text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2 hover:bg-white/15 transition">
+                  <MessageCircle size={18} /> WhatsApp
                 </a>
               )}
-              <a href="#admissions" className="border border-white/20 text-white rounded-lg px-6 py-3 font-semibold text-center hover:bg-white/10 transition">
-                Apply for Admission
-              </a>
             </div>
           </div>
         </div>

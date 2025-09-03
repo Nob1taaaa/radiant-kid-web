@@ -1,141 +1,93 @@
 import { Button } from "@/components/ui/button";
-import { Building2, Library, Users, Shield, Wifi, Bus, BookOpen, FlaskConical, MapPin } from "lucide-react";
-import { school } from "@/data/school";
+import { Home, Trees, Utensils, Shield, Camera, Wifi } from "lucide-react";
 import schoolBuilding from "@/assets/school-building.jpg";
-import classroom from "@/assets/classroom.jpg";
 import playground from "@/assets/playground.jpg";
+import kidsArt from "@/assets/kids-art.jpg";
 
 const facilities = [
   {
-    icon: Building2,
-    title: "Smart Classrooms",
-    description: "Well-ventilated, modern classrooms equipped with educational technology and child-friendly furniture.",
-    image: schoolBuilding,
-    available: true
+    icon: Home,
+    title: "Modern Classrooms",
+    description: "Bright, spacious classrooms designed specifically for early learning with child-safe furniture.",
+    image: schoolBuilding
   },
   {
-    icon: Library,
-    title: "Library & Reading Corner",
-    description: "Extensive collection of books and dedicated reading spaces to foster love for learning.",
-    image: classroom,
-    available: true
+    icon: Trees,
+    title: "Safe Playground",
+    description: "Outdoor play areas with age-appropriate equipment for physical development and fun.",
+    image: playground
   },
   {
-    icon: MapPin,
-    title: "Safe Play Area",
-    description: "Secure outdoor playground with age-appropriate equipment for physical development.",
-    image: playground,
-    available: true
+    icon: Utensils,
+    title: "Healthy Meals",
+    description: "Nutritious meals and snacks prepared fresh daily with organic and locally sourced ingredients.",
+    image: kidsArt
   }
 ];
 
-const additionalFacilities = [
-  { icon: Shield, title: "CCTV Security", description: "Complete campus surveillance with secure entry points", available: true },
-  { icon: Bus, title: "Transport Facility", description: "Safe transportation service available on demand", available: true },
-  { icon: FlaskConical, title: "Science Resources", description: "Basic science equipment and learning materials", available: true },
-  { icon: Users, title: "Computer Lab", description: "IT infrastructure for digital learning", available: false },
-  { icon: Wifi, title: "Internet Connectivity", description: "High-speed internet for educational purposes", available: false },
-  { icon: BookOpen, title: "Book Bank", description: "Free books and educational materials for students", available: true }
+const amenities = [
+  { icon: Shield, title: "24/7 Security", description: "Round-the-clock security for complete peace of mind" },
+  { icon: Camera, title: "Live Updates", description: "Parents can see their child's activities through our app" },
+  { icon: Wifi, title: "Digital Learning", description: "Interactive smart boards and educational technology" },
+  { icon: Home, title: "Cozy Nap Areas", description: "Comfortable rest spaces for younger children" }
 ];
 
 const FacilitiesSection = () => {
   return (
-    <section id="facilities" className="py-20 bg-muted/30">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-primary/10 rounded-full px-6 py-2 mb-4">
-            <Building2 className="text-primary mr-2" size={18} />
-            <span className="text-primary font-semibold">School Facilities</span>
+          <div className="inline-flex items-center bg-secondary/10 rounded-full px-6 py-2 mb-4">
+            <span className="text-secondary font-semibold">Our Facilities</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Modern Infrastructure for Quality Education
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            World-Class <span className="text-secondary">Facilities</span> For Your Child
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Our school provides state-of-the-art facilities designed to support comprehensive learning and development.
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Safe, happy spaces where children learn, play, and grow.
           </p>
         </div>
 
         {/* Main Facilities Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {facilities.map((facility, index) => (
             <div 
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 bg-white"
+              className="group relative overflow-hidden rounded-3xl shadow-soft hover:shadow-strong transition-all duration-500 animate-fade-in"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Background Image */}
               <div className="aspect-[4/3] relative">
                 <img 
                   src={facility.image} 
                   alt={facility.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
-                
-                {/* Available Badge */}
-                {facility.available && (
-                  <div className="absolute top-4 right-4 bg-green-medium text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Available
-                  </div>
-                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               </div>
               
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                    <facility.icon size={24} className="text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary">{facility.title}</h3>
+              {/* Content Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                <div className={`w-12 h-12 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
+                  <facility.icon size={24} className="text-white" />
                 </div>
-                <p className="text-muted-foreground leading-relaxed">{facility.description}</p>
+                
+                <h3 className="text-2xl font-bold mb-3">{facility.title}</h3>
+                <p className="text-white/90 text-sm leading-relaxed">{facility.description}</p>
+                
+                {/* Hover Button */}
+                <div className="mt-4 transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <Button variant="outline" className="bg-white/20 border-white/30 text-white hover:bg-white hover:text-gray-900 rounded-full px-4 py-2">
+                    Learn More
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Additional Facilities Grid */}
-        <div className="bg-white rounded-3xl p-8 shadow-soft">
-          <h3 className="text-2xl font-bold text-primary mb-8 text-center">Additional Facilities & Resources</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {additionalFacilities.map((facility, index) => (
-              <div key={index} className="flex items-start space-x-4 p-4 rounded-xl hover:bg-muted/30 transition-colors">
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${facility.available ? 'bg-green-medium text-white' : 'bg-gray-200 text-gray-500'}`}>
-                  <facility.icon size={20} />
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-semibold text-primary">{facility.title}</h4>
-                    <span className={`w-2 h-2 rounded-full ${facility.available ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{facility.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        {/* School Facilities Stats */}
-        <div className="mt-16 text-center">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <div className="text-3xl font-bold text-primary mb-2">{school.facilities.length}</div>
-              <div className="text-sm text-muted-foreground">Core Facilities</div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <div className="text-3xl font-bold text-secondary mb-2">{school.stats.totals.students}</div>
-              <div className="text-sm text-muted-foreground">Students Enrolled</div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <div className="text-3xl font-bold text-green-medium mb-2">{school.stats.classesOffered.length}</div>
-              <div className="text-sm text-muted-foreground">Classes Available</div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <div className="text-3xl font-bold text-primary mb-2">{school.stats.yearEstablished}</div>
-              <div className="text-sm text-muted-foreground">Year Established</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
