@@ -118,12 +118,6 @@ const ActivitiesSection = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center">
-          <Button className="bg-gradient-primary hover:opacity-90 text-white px-8 py-4 rounded-full shadow-medium transition-all duration-300">
-            Explore All Activities
-          </Button>
-        </div>
       </div>
     </section>
   );
