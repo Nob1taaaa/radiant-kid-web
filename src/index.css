@@ -337,32 +337,29 @@ All colors MUST be HSL.
   transition: all 0.5s ease-in-out 0.5s;
 }
 
-/* Animated gradient border utility for SchoolInfoSection cards */
+/* Animated border utility for SchoolInfoSection cards (subtle color pulse, no rotation) */
 .animated-border {
   position: relative;
-  border-radius: 1.5rem; /* matches rounded-3xl */
+  border-radius: 1.5rem;
+  animation: border-color-pulse 8s ease-in-out infinite;
 }
 .animated-border::before {
   content: "";
   position: absolute;
-  inset: -1px;
+  inset: 0;
   padding: 2px; /* border thickness */
   border-radius: inherit;
-  background: conic-gradient(
-    from 0deg,
-    hsl(var(--orange-medium)) 0%,
-    hsl(var(--teal-medium)) 20%,
-    hsl(var(--blue-medium)) 40%,
-    hsl(var(--purple-medium)) 60%,
-    hsl(var(--red-medium)) 80%,
-    hsl(var(--orange-medium)) 100%
-  );
+  background: var(--border-anim-color, hsl(var(--orange-medium)/0.8));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  animation: animated-border-rotate 6s linear infinite;
   pointer-events: none;
 }
-@keyframes animated-border-rotate {
-  to { transform: rotate(360deg); }
+@keyframes border-color-pulse {
+  0%, 100% {
+    --border-anim-color: hsl(var(--orange-medium)/0.7);
+  }
+  50% {
+    --border-anim-color: hsl(var(--orange-light)/0.7);
+  }
 }
