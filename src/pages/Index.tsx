@@ -1,35 +1,23 @@
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import ActivitiesSection from "@/components/ActivitiesSection";
-import LearningSection from "@/components/LearningSection";
+import ProfessionalHeroSection from "@/components/ProfessionalHeroSection";
+import AcademicsSection from "@/components/AcademicsSection";
 import FacilitiesSection from "@/components/FacilitiesSection";
-import FunFactsSection from "@/components/FunFactsSection";
-import StatsSection from "@/components/StatsSection";
-import AgeProgramsSection from "@/components/AgeProgramsSection";
 import TeachersSection from "@/components/TeachersSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import SchoolInfoSection from "@/components/SchoolInfoSection";
 import SchoolStatsSection from "@/components/SchoolStatsSection";
-import ZigZagCardsSection from "@/components/ZigZagCardsSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
-        <HeroSection />
-        <FeaturesSection />
-        <ActivitiesSection />
-        <LearningSection />
-        <FacilitiesSection />
-        <FunFactsSection />
-        <StatsSection />
-        <AgeProgramsSection />
+        <ProfessionalHeroSection />
+        <AcademicsSection />
         <SchoolInfoSection />
+        <FacilitiesSection />
         <SchoolStatsSection />
-        <ZigZagCardsSection />
         <TeachersSection />
         <TestimonialsSection />
       </main>
