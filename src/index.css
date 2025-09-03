@@ -336,3 +336,33 @@ All colors MUST be HSL.
   transform-origin: center;
   transition: all 0.5s ease-in-out 0.5s;
 }
+
+/* Animated gradient border utility for SchoolInfoSection cards */
+.animated-border {
+  position: relative;
+  border-radius: 1.5rem; /* matches rounded-3xl */
+}
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 2px; /* border thickness */
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    hsl(var(--orange-medium)) 0%,
+    hsl(var(--teal-medium)) 20%,
+    hsl(var(--blue-medium)) 40%,
+    hsl(var(--purple-medium)) 60%,
+    hsl(var(--red-medium)) 80%,
+    hsl(var(--orange-medium)) 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: animated-border-rotate 6s linear infinite;
+  pointer-events: none;
+}
+@keyframes animated-border-rotate {
+  to { transform: rotate(360deg); }
+}
