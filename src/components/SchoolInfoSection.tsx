@@ -45,7 +45,7 @@ const SchoolInfoSection = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
+          <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-1" style={{ border: '1px solid rgba(177, 89, 139, 1)' }}>
             <div className="flex items-center gap-3 mb-4">
               <BookOpen className="text-teal-medium" />
               <h3 className="text-2xl font-bold">Curriculum & Methodology</h3>
