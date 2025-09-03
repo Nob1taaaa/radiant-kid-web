@@ -73,7 +73,7 @@ const SchoolInfoSection = () => {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-50 to-teal-50 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all">
+          <div className="bg-gradient-to-br from-orange-50 to-teal-50 rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all" style={{ border: '1px solid rgba(43, 122, 200, 1)' }}>
             <h3 className="text-2xl font-bold mb-4">School Facilities</h3>
             <ul className="grid md:grid-cols-2 gap-3">
               {school.facilities.map((f) => (
