@@ -46,30 +46,31 @@ const AgeProgramsSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="age-tilt-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {programs.map((program, index) => (
-            <div 
-              key={index}
-              className={`${program.color} ${program.textColor} p-8 rounded-3xl shadow-strong hover:transform hover:scale-105 transition-all duration-300 animate-fade-in group`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users size={24} className="text-white" />
+            <div key={index} className="age-tilt-card" style={{ ['--r' as any]: `${-15 + index * 10}` }}>
+              <div
+                className={`${program.color} ${program.textColor} p-8 rounded-3xl shadow-strong hover:transform hover:scale-105 transition-all duration-300 animate-fade-in group`}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users size={24} className="text-white" />
+                  </div>
                 </div>
-              </div>
-              
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2">{program.title}</h3>
-                <div className="text-lg font-semibold mb-4 opacity-90">{program.subtitle}</div>
-                <p className="text-white/90 leading-relaxed mb-6">{program.description}</p>
-                
-                <Button 
-                  variant="outline" 
-                  className="bg-white/20 border-white/30 text-white hover:bg-white hover:text-gray-900 rounded-full px-6 py-2 transition-all duration-300"
-                >
-                  Learn More
-                </Button>
+
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold mb-2">{program.title}</h3>
+                  <div className="text-lg font-semibold mb-4 opacity-90">{program.subtitle}</div>
+                  <p className="text-white/90 leading-relaxed mb-6">{program.description}</p>
+
+                  <Button
+                    variant="outline"
+                    className="bg-white/20 border-white/30 text-white hover:bg-white hover:text-gray-900 rounded-full px-6 py-2 transition-all duration-300"
+                  >
+                    Learn More
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
