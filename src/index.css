@@ -151,3 +151,112 @@ All colors MUST be HSL.
 .age-tilt-grid:hover .age-tilt-card {
   transform: rotate(0deg);
 }
+
+/* Cute Instructor Card animation */
+.inst-card {
+  width: 100%;
+  height: 320px;
+  background: #ffffff;
+  border-radius: 32px;
+  padding: 3px;
+  position: relative;
+  box-shadow: #604b4a30 0px 70px 30px -50px;
+  transition: all 0.5s ease-in-out;
+}
+.inst-card .inst-mail {
+  position: absolute;
+  right: 2rem;
+  top: 1.4rem;
+  background: transparent;
+  border: none;
+  z-index: 3;
+}
+.inst-card .inst-mail svg {
+  stroke: #fbb9b6;
+  stroke-width: 3px;
+}
+.inst-card .inst-mail svg:hover {
+  stroke: #f55d56;
+}
+.inst-card .inst-profile {
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  top: 3px;
+  left: 3px;
+  border-radius: 29px;
+  z-index: 1;
+  border: 0px solid #fbb9b6;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+.inst-card .inst-profile img,
+.inst-card .inst-profile svg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: 0 0;
+  transition: all 0.5s ease-in-out 0s;
+}
+.inst-card .inst-bottom {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  background: #fbb9b6;
+  top: 80%;
+  border-radius: 29px;
+  z-index: 2;
+  box-shadow: rgba(96, 75, 74, 0.188) 0px 5px 5px 0px inset;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.inst-card .inst-bottom .content {
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 160px;
+}
+.inst-card .inst-bottom .content .name {
+  display: block;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+.inst-card .inst-bottom .content .about-me {
+  display: block;
+  font-size: 0.9rem;
+  color: white;
+  margin-top: 0.75rem;
+}
+.inst-card:hover {
+  border-top-left-radius: 55px;
+}
+.inst-card:hover .inst-bottom {
+  top: 20%;
+  border-radius: 80px 29px 29px 29px;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+.inst-card:hover .inst-profile {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  z-index: 3;
+  border: 7px solid #fbb9b6;
+  box-shadow: rgba(96, 75, 74, 0.188) 0px 5px 5px 0px;
+  transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+}
+.inst-card:hover .inst-profile:hover {
+  transform: scale(1.15);
+  border-radius: 16px;
+}
+.inst-card:hover .inst-profile img,
+.inst-card:hover .inst-profile svg {
+  transform: scale(2.2);
+  object-position: 0 25px;
+  transition: all 0.5s ease-in-out 0.5s;
+}
