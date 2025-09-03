@@ -68,7 +68,7 @@ const SchoolStatsSection = () => {
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Sparkles className="text-primary" size={18}/> Enrollment by Class</h3>
               <div className="h-80">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={school.stats.enrollmentByClass}>
+                  <BarChart data={[...school.stats.enrollmentByClass]}>
                     <defs>
                       <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stopColor={colors[2]} stopOpacity={0.95} />

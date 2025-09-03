@@ -6,13 +6,25 @@ import { school } from "@/data/school";
 const HeroSection = () => {
   return (
     <section className="min-h-[80vh] flex items-center relative overflow-hidden bg-gradient-hero">
-      {/* Decorative curves and rocket */}
+      {/* Super cute decorative curves and elements */}
       <svg className="pointer-events-none absolute -bottom-8 right-0 w-[60%] md:w-[45%] text-foreground/15" viewBox="0 0 600 180" fill="none" aria-hidden>
-        <path d="M0 160 C160 120 280 40 600 100" stroke="currentColor" strokeWidth="12" strokeLinecap="round"/>
-        <path d="M0 180 C200 120 320 60 600 120" stroke="currentColor" strokeWidth="6" strokeLinecap="round"/>
+        <path d="M0 160 C160 100 280 20 400 60 C500 90 550 40 600 80" stroke="currentColor" strokeWidth="12" strokeLinecap="round"/>
+        <path d="M0 180 C200 100 320 40 450 80 C530 110 570 60 600 100" stroke="currentColor" strokeWidth="6" strokeLinecap="round"/>
+        <path d="M100 120 C200 80 300 160 400 120 C450 100 500 140 550 120" stroke="currentColor" strokeWidth="4" strokeLinecap="round" opacity="0.6"/>
       </svg>
+      
+      {/* Floating cute elements */}
       <div className="absolute top-6 right-6 text-secondary/80 animate-bounce-gentle hidden md:block">
         <Rocket size={40} />
+      </div>
+      <div className="absolute top-20 left-12 text-orange-medium/60 animate-bounce-gentle hidden lg:block" style={{animationDelay: '0.5s'}}>
+        ✨
+      </div>
+      <div className="absolute bottom-20 left-8 text-teal-medium/60 animate-bounce-gentle hidden lg:block" style={{animationDelay: '1s'}}>
+        🎈
+      </div>
+      <div className="absolute top-32 right-20 text-purple-medium/60 animate-bounce-gentle hidden lg:block" style={{animationDelay: '1.5s'}}>
+        🌟
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
@@ -31,11 +43,26 @@ const HeroSection = () => {
               />
             </div>
 
-            {/* Outside design curves hugging the circle */}
+            {/* Super cute curves hugging the circle */}
             <svg className="pointer-events-none absolute inset-0 overflow-visible" viewBox="0 0 100 100" fill="none" aria-hidden>
               <g transform="translate(50,50)">
-                <circle r="52" fill="none" className="text-foreground/25" stroke="currentColor" strokeWidth="4" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
-                <circle r="57" fill="none" className="text-secondary/60" stroke="currentColor" strokeWidth="8" strokeDasharray="70 260" strokeLinecap="round" transform="rotate(-40)" />
+                {/* Animated wiggling curves */}
+                <circle r="52" fill="none" className="text-orange-medium/40" stroke="currentColor" strokeWidth="6" strokeDasharray="60 80 40 120" strokeLinecap="round" transform="rotate(-40)">
+                  <animateTransform attributeName="transform" type="rotate" values="-40;-20;-40" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="57" fill="none" className="text-teal-medium/60" stroke="currentColor" strokeWidth="4" strokeDasharray="80 60 100 60" strokeLinecap="round" transform="rotate(20)">
+                  <animateTransform attributeName="transform" type="rotate" values="20;40;20" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="62" fill="none" className="text-purple-medium/30" stroke="currentColor" strokeWidth="3" strokeDasharray="40 80 60 100" strokeLinecap="round" transform="rotate(-60)">
+                  <animateTransform attributeName="transform" type="rotate" values="-60;-80;-60" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                {/* Cute little dots */}
+                <circle r="2" cx="45" cy="0" fill="hsl(var(--orange-medium))" opacity="0.8">
+                  <animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="1.5" cx="-50" cy="10" fill="hsl(var(--teal-medium))" opacity="0.6">
+                  <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="10s" repeatCount="indefinite"/>
+                </circle>
               </g>
             </svg>
           </div>

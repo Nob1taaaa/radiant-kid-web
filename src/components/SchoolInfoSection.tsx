@@ -128,7 +128,7 @@ const SchoolInfoSection = () => {
                 <a href={`tel:${school.contact.phone}`} className="bg-white text-foreground rounded-full px-6 py-3 font-semibold shadow-strong hover:opacity-90 transition">Call Now</a>
               )}
               {school.contact.whatsapp && (
-                <a href={`https://wa.me/${school.contact.whatsapp.replace(/[^0-9]/g, "")}`} target="_blank" rel="noreferrer" className="bg-black/20 border border-white/40 text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2 hover:bg-white/15 transition">
+                <a href={`https://wa.me/${String(school.contact.whatsapp).replace(/[^0-9]/g, "")}`} target="_blank" rel="noreferrer" className="bg-black/20 border border-white/40 text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2 hover:bg-white/15 transition">
                   <MessageCircle size={18} /> WhatsApp
                 </a>
               )}
