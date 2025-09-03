@@ -213,7 +213,6 @@ All colors MUST be HSL.
   height: 300px;
   transition: opacity 300ms;
   animation: amz-rot-a 3000ms infinite linear;
-  animation-play-state: paused;
   z-index: 0;
 }
 .amz-card::before {
@@ -229,24 +228,7 @@ All colors MUST be HSL.
   right: 0;
   animation-name: amz-rot-b;
 }
-.amz-card:hover::before,
-.amz-card:hover::after {
-  opacity: 1;
-  animation-play-state: running;
-}
-.amz-card:hover .amz-glass {
-  opacity: 0;
-}
-.amz-glass {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #17171733;
-  backdrop-filter: blur(50px);
-  z-index: 1;
-  transition-duration: 0.5s;
-}
+.amz-glass { display: none; }
 @keyframes amz-rot-a {
   0% { transform: rotate(0deg) translateY(50%); }
   100% { transform: rotate(360deg) translateY(50%); }
