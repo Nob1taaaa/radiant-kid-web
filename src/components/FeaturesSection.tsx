@@ -58,32 +58,35 @@ const FeaturesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className={`${feature.bgColor} p-8 rounded-3xl shadow-soft hover:shadow-medium transition-all duration-300 hover:transform hover:-translate-y-2 animate-fade-in group relative overflow-hidden`}
+            <div
+              key={index}
+              className={`relative p-[6px] rounded-[20px] shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-2 animate-fade-in group overflow-hidden`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Background gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-3xl`}></div>
-              
-              {/* Icon */}
-              <div className={`relative w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-medium group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                <feature.icon size={28} className="text-white" />
-              </div>
-              
-              {/* Content */}
-              <div className="relative text-center">
-                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">{feature.description}</p>
-                
-                {/* Stats badge */}
-                <div className="inline-block bg-white/70 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-foreground">
-                  {feature.stats}
+              {/* Rotating gradient border */}
+              <div className="pointer-events-none absolute left-1/2 top-1/2 w-[120px] h-[140%] -translate-x-1/2 -translate-y-1/2 rounded-[20px]" style={{ backgroundImage: 'linear-gradient(180deg, rgb(0,183,255), rgb(255,48,255))', animation: 'rotBGimg 3s linear infinite' }} />
+
+              {/* Inner card */}
+              <div className={`${feature.bgColor} relative z-[1] rounded-[16px] p-8`}>
+                {/* Icon */}
+                <div className={`relative w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-medium group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <feature.icon size={28} className="text-white" />
                 </div>
-                
-                {/* Progress bar */}
-                <div className="mt-4">
-                  <div className={`h-1 bg-gradient-to-r ${feature.color} rounded-full`}></div>
+
+                {/* Content */}
+                <div className="relative text-center">
+                  <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">{feature.description}</p>
+
+                  {/* Stats badge */}
+                  <div className="inline-block bg-white/70 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-foreground">
+                    {feature.stats}
+                  </div>
+
+                  {/* Progress bar */}
+                  <div className="mt-4">
+                    <div className={`h-1 bg-gradient-to-r ${feature.color} rounded-full`}></div>
+                  </div>
                 </div>
               </div>
             </div>
