@@ -363,3 +363,12 @@ All colors MUST be HSL.
     --border-anim-color: hsl(var(--orange-light)/0.7);
   }
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
