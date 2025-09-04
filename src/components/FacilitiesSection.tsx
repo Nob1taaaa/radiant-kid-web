@@ -34,30 +34,30 @@ const amenities = [
 
 const FacilitiesSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-secondary/10 rounded-full px-6 py-2 mb-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        {/* Mobile-optimized header */}
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center bg-secondary/10 rounded-full px-4 sm:px-6 py-2 mb-4 text-sm sm:text-base">
             <span className="text-secondary font-semibold">Our Facilities</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
             World-Class <span className="text-secondary">Facilities</span> For Your Child
           </h2>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
             Safe, happy spaces where children learn, play, and grow.
           </p>
         </div>
 
-        {/* Main Facilities Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        {/* Mobile-optimized main facilities grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           {facilities.map((facility, index) => (
             <div 
               key={index}
-              className="group relative overflow-hidden rounded-3xl shadow-soft hover:shadow-strong transition-all duration-500 animate-fade-in"
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-soft hover:shadow-strong transition-all duration-500 animate-fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Background Image */}
+              {/* Mobile-optimized background image */}
               <div className="aspect-[4/3] relative">
                 <img 
                   src={facility.image} 
@@ -67,18 +67,18 @@ const FacilitiesSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               </div>
               
-              {/* Content Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                <div className={`w-12 h-12 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
-                  <facility.icon size={24} className="text-white" />
+              {/* Mobile-optimized content overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 text-white">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
+                  <facility.icon size={20} className="sm:w-6 sm:h-6 text-white" />
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-3">{facility.title}</h3>
-                <p className="text-white/90 text-sm leading-relaxed">{facility.description}</p>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3">{facility.title}</h3>
+                <p className="text-white/90 text-xs sm:text-sm leading-relaxed">{facility.description}</p>
                 
-                {/* Hover Button */}
-                <div className="mt-4 transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <Button variant="outline" className="bg-white/20 border-white/30 text-white hover:bg-white hover:text-gray-900 rounded-full px-4 py-2">
+                {/* Mobile-optimized hover button */}
+                <div className="mt-3 sm:mt-4 transform translate-y-4 sm:translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <Button variant="outline" className="bg-white/20 border-white/30 text-white hover:bg-white hover:text-gray-900 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm">
                     Learn More
                   </Button>
                 </div>
