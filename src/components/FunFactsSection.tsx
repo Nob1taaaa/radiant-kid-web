@@ -57,7 +57,7 @@ const FunFactsSection = () => {
 
             {/* Mobile horizontal scroll for facts */}
             <HorizontalScrollableCard cardClassName="animate-fade-in">
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+              <div className="hidden lg:grid lg:grid-cols-2 gap-4 sm:gap-6">
                 {facts.map((fact, index) => (
                   <div key={index} className="amz-card" style={{ animationDelay: `${index * 0.1}s` }}>
                     <span className="amz-glass" />

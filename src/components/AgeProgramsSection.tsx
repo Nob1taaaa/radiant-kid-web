@@ -51,7 +51,7 @@ const AgeProgramsSection = () => {
           className="w-full"
           cardClassName="h-full"
         >
-          <div className="age-tilt-grid grid lg:grid-cols-4 gap-8">
+          <div className="hidden lg:grid lg:grid-cols-4 gap-8">
             {programs.map((program, index) => (
               <div key={index} className="age-tilt-card" style={{ ['--r' as any]: `${-15 + index * 10}` }}>
                 <div
