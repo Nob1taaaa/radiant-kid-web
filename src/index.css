@@ -168,16 +168,21 @@ All colors MUST be HSL.
 .amz-card {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  background: #171717;
+  border-radius: 16px;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--orange-medium)) 100%);
   padding: 3px;
   min-height: 254px;
-  box-shadow: 0px 0px 3px 1px #00000088;
+  box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.3);
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.amz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px -10px hsl(var(--primary) / 0.4);
 }
 .amz-content {
-  border-radius: 7px;
-  background: #171717;
+  border-radius: 13px;
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.95) 0%, hsl(var(--orange-dark) / 0.95) 100%);
   width: 100%;
   height: 100%;
   z-index: 2;
@@ -188,6 +193,7 @@ All colors MUST be HSL.
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
+  backdrop-filter: blur(10px);
 }
 .amz-content::before {
   opacity: 0;
@@ -217,13 +223,13 @@ All colors MUST be HSL.
 }
 .amz-card::before {
   transform: rotate(0deg) translateY(50%);
-  background: linear-gradient(90deg, #ff2288, transparent);
+  background: linear-gradient(90deg, hsl(var(--orange-light)), transparent);
   top: 0;
   left: 0;
 }
 .amz-card::after {
   transform: rotate(0deg) translateY(-50%);
-  background: linear-gradient(90deg, transparent, #2268ff);
+  background: linear-gradient(90deg, transparent, hsl(var(--teal-medium)));
   bottom: 0;
   right: 0;
   animation-name: amz-rot-b;
