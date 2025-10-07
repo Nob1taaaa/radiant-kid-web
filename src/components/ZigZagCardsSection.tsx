@@ -1,5 +1,6 @@
 import { Palette, BookOpen, PartyPopper, Shield, Trophy, Users } from "lucide-react";
 import { school } from "@/data/school";
+import HorizontalScrollableCard from "./HorizontalScrollableCard";
 
 const items = [
   {
@@ -65,57 +66,62 @@ const ZigZagCardsSection = () => {
         </div>
 
         {/* enhanced zig‑zag grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {items.map((it, i) => (
-            <div
-              key={i}
-              className={`relative group rounded-3xl p-6 shadow-soft hover:shadow-strong transition-all duration-300 overflow-hidden bg-white ${i % 2 === 1 ? 'md:-translate-y-6' : ''} hover:-translate-y-2 hover:rotate-1`}
-              style={{
-                clipPath: i % 3 === 0 
-                  ? 'polygon(0% 0%, 95% 0%, 100% 8%, 100% 92%, 95% 100%, 5% 100%, 0% 92%, 0% 8%)'
-                  : i % 3 === 1 
-                  ? 'polygon(5% 0%, 100% 0%, 100% 8%, 95% 100%, 0% 100%, 0% 92%)'
-                  : 'polygon(0% 0%, 100% 0%, 100% 92%, 95% 100%, 5% 100%, 0% 8%)'
-              }}
-            >
-              {/* enhanced gradient ribbon */}
-              <div className={`absolute -z-0 -right-16 -top-16 w-56 h-56 rounded-3xl blur-2xl opacity-70 bg-gradient-to-br ${it.colors} animate-pulse`}></div>
+        <HorizontalScrollableCard 
+          className="w-full"
+          cardClassName="h-full"
+        >
+          <div className="grid lg:grid-cols-3 gap-8">
+            {items.map((it, i) => (
+              <div
+                key={i}
+                className={`relative group rounded-3xl p-6 shadow-soft hover:shadow-strong transition-all duration-300 overflow-hidden bg-white hover:-translate-y-2 hover:rotate-1`}
+                style={{
+                  clipPath: i % 3 === 0 
+                    ? 'polygon(0% 0%, 95% 0%, 100% 8%, 100% 92%, 95% 100%, 5% 100%, 0% 92%, 0% 8%)'
+                    : i % 3 === 1 
+                    ? 'polygon(5% 0%, 100% 0%, 100% 8%, 95% 100%, 0% 100%, 0% 92%)'
+                    : 'polygon(0% 0%, 100% 0%, 100% 92%, 95% 100%, 5% 100%, 0% 8%)'
+                }}
+              >
+                {/* enhanced gradient ribbon */}
+                <div className={`absolute -z-0 -right-16 -top-16 w-56 h-56 rounded-3xl blur-2xl opacity-70 bg-gradient-to-br ${it.colors} animate-pulse`}></div>
 
-              {/* floating emoji */}
-              <div className="absolute -top-2 -right-2 text-2xl animate-bounce-gentle" style={{ animationDelay: `${i * 0.2}s` }}>
-                {it.emoji}
+                {/* floating emoji */}
+                <div className="absolute -top-2 -right-2 text-2xl animate-bounce-gentle" style={{ animationDelay: `${i * 0.2}s` }}>
+                  {it.emoji}
+                </div>
+
+                {/* header chip */}
+                <div className={`relative z-10 inline-flex items-center gap-2 bg-white/80 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold shadow-medium`}> 
+                  <span>{it.emoji}</span>
+                  <span className="text-foreground/80">{school.shortName}</span>
+                </div>
+
+                {/* icon */}
+                <div className={`relative z-10 w-14 h-14 mt-4 mb-3 rounded-2xl flex items-center justify-center text-white shadow-medium bg-gradient-to-br ${it.colors} group-hover:scale-110 transition-transform duration-300`}>
+                  <it.icon size={24} />
+                </div>
+
+                <h3 className="relative z-10 text-xl font-bold mb-2">{it.title}</h3>
+                <p className="relative z-10 text-muted-foreground">
+                  {it.desc
+                    .replace('{students}', String(school.stats.totals.students ?? ''))
+                    .replace('{teachers}', String(school.stats.totals.teachers ?? ''))}
+                </p>
+
+                {/* enhanced zig‑zag bottom edge */}
+                <svg className="absolute left-0 bottom-0 w-full h-12" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden>
+                  <path d="M0,12 L8,2 L16,12 L24,2 L32,12 L40,2 L48,12 L56,2 L64,12 L72,2 L80,12 L88,2 L96,12 L100,12 L100,12 L0,12 Z" fill="hsl(var(--orange-light)/0.4)"/>
+                  <path d="M0,12 L6,4 L12,12 L18,4 L24,12 L30,4 L36,12 L42,4 L48,12 L54,4 L60,12 L66,4 L72,12 L78,4 L84,12 L90,4 L96,12 L100,12 L100,12 L0,12 Z" fill="hsl(var(--teal-light)/0.3)"/>
+                </svg>
+
+                {/* cute corner decorations */}
+                <div className="absolute top-2 left-2 w-3 h-3 rounded-full bg-gradient-to-br from-yellow-300 to-orange-300 opacity-60"></div>
+                <div className="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-gradient-to-br from-pink-300 to-purple-300 opacity-60"></div>
               </div>
-
-              {/* header chip */}
-              <div className={`relative z-10 inline-flex items-center gap-2 bg-white/80 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold shadow-medium`}> 
-                <span>{it.emoji}</span>
-                <span className="text-foreground/80">{school.shortName}</span>
-              </div>
-
-              {/* icon */}
-              <div className={`relative z-10 w-14 h-14 mt-4 mb-3 rounded-2xl flex items-center justify-center text-white shadow-medium bg-gradient-to-br ${it.colors} group-hover:scale-110 transition-transform duration-300`}>
-                <it.icon size={24} />
-              </div>
-
-              <h3 className="relative z-10 text-xl font-bold mb-2">{it.title}</h3>
-              <p className="relative z-10 text-muted-foreground">
-                {it.desc
-                  .replace('{students}', String(school.stats.totals.students ?? ''))
-                  .replace('{teachers}', String(school.stats.totals.teachers ?? ''))}
-              </p>
-
-              {/* enhanced zig‑zag bottom edge */}
-              <svg className="absolute left-0 bottom-0 w-full h-12" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden>
-                <path d="M0,12 L8,2 L16,12 L24,2 L32,12 L40,2 L48,12 L56,2 L64,12 L72,2 L80,12 L88,2 L96,12 L100,12 L100,12 L0,12 Z" fill="hsl(var(--orange-light)/0.4)"/>
-                <path d="M0,12 L6,4 L12,12 L18,4 L24,12 L30,4 L36,12 L42,4 L48,12 L54,4 L60,12 L66,4 L72,12 L78,4 L84,12 L90,4 L96,12 L100,12 L100,12 L0,12 Z" fill="hsl(var(--teal-light)/0.3)"/>
-              </svg>
-
-              {/* cute corner decorations */}
-              <div className="absolute top-2 left-2 w-3 h-3 rounded-full bg-gradient-to-br from-yellow-300 to-orange-300 opacity-60"></div>
-              <div className="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-gradient-to-br from-pink-300 to-purple-300 opacity-60"></div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </HorizontalScrollableCard>
       </div>
 
       {/* super cute wave bottom */}
